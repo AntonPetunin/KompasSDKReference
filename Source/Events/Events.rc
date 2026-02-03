@@ -1,0 +1,11 @@
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+///////////////////////////////////////////////////////////////////////
+// Информация о версии
+#define VI_SAMPLE_NAME "Пример обработки событий Компаса (C++ KsAPI)"
+#define VI_SAMPLE_FILE "Events.rtw"
+
+#ifndef TESTS
+#include "..\..\SampleVersion.rc2"
+#endif

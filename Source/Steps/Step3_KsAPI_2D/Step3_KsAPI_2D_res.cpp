@@ -1,0 +1,63 @@
+﻿#include "Step3_KsAPI_2D_pch.h"
+
+#include "Resource.h"
+
+static ksapi::IResourcesModulePtr resourceModule;
+std::wstring libname = L"Step3_KsAPI_2D";
+
+void * GetModule()
+{
+  return &resourceModule;
+}
+
+#define MENU_ID(idName)   resourceModule->AddMenuId(L"" #idName, idName);
+#define STRING_ID(idName) resourceModule->AddStringId(L"" #idName, idName);
+
+void LoadResources(ksapi::IApplication & app)
+{
+  resourceModule = app.CreateResourcesModule(libname);
+
+  MENU_ID(IDR_LIBID)
+  MENU_ID(CM_LEADER)
+  MENU_ID(CM_MARK_LEADER)
+  MENU_ID(CM_CHANGE_LEADER)
+  MENU_ID(CM_BRAND_LEADER)
+  MENU_ID(CM_ROUGH)
+  MENU_ID(CM_BASE)
+  MENU_ID(CM_CUT_LINE)
+  MENU_ID(CM_VIEW_POINTER)
+  MENU_ID(CM_TOLERANCE)
+  MENU_ID(CM_OBJECTS_NAVIGATION)
+
+  STRING_ID(IDS_NODOC)
+  STRING_ID(IDS_DETAIL)
+  STRING_ID(IDS_MARK)
+  STRING_ID(IDS_EDIT)
+  STRING_ID(IDS_NUMBER)
+  STRING_ID(IDS_COMMAND1)
+  STRING_ID(IDS_COMMAND2)
+  STRING_ID(IDS_NOOBJ)
+  STRING_ID(IDS_NOPOINT)
+  STRING_ID(IDS_POINT)
+  STRING_ID(IDS_ARROUND)
+  STRING_ID(IDS_ON)
+  STRING_ID(IDS_OFF)
+  STRING_ID(IDS_BRANCHBEGIN)
+  STRING_ID(IDS_BEGINSHELF)
+  STRING_ID(IDS_ENDSHELF)
+  STRING_ID(IDS_PARALLEL)
+  STRING_ID(IDS_BRANCHCOUNT)
+  STRING_ID(IDS_LEADER)
+  STRING_ID(IDS_MARKLEADER)
+  STRING_ID(IDS_BRANDLEADER)
+  STRING_ID(IDS_CHANLEADER)
+  STRING_ID(IDS_ROUGH)
+  STRING_ID(IDS_BASE)
+  STRING_ID(IDS_CUTLINE)
+  STRING_ID(IDS_VIEWPOINTER)
+  STRING_ID(IDS_TOLERANCE)
+  STRING_ID(IDS_MARK2)
+  STRING_ID(IDS_MARK3)
+
+  resourceModule->End();
+}

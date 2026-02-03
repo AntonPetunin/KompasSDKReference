@@ -1,0 +1,68 @@
+﻿#include "Step4_pch.h"
+#include "Resource.h"
+#include "SLIDE.RH"
+
+
+static ksapi::IResourcesModulePtr resourceModule;
+
+void * GetModule()
+{
+  return &resourceModule;
+}
+
+#define MENU_ID(idName)     resourceModule->AddMenuId(L"" #idName, idName);
+#define STRING_ID(idName)   resourceModule->AddStringId(L"" #idName, idName);
+#define RCDATA_ID(idName)   resourceModule->AddRCDataId(L"" #idName, idName);
+#define UNUNIQUE_ID(idName) resourceModule->AddUnuniqueId(L"" #idName, idName);
+
+void LoadResources(ksapi::IApplication & app)
+{
+  resourceModule = app.CreateResourcesModule(L"Step4");
+
+  RCDATA_ID(IDC_SLIDE)
+  UNUNIQUE_ID(END_SLIDE);
+  UNUNIQUE_ID(GB);
+  UNUNIQUE_ID(SC);
+  UNUNIQUE_ID(LS);
+  UNUNIQUE_ID(LN);
+  UNUNIQUE_ID(AR1);
+
+  MENU_ID(IDR_LIBID)
+  MENU_ID(IDC_1_MENU)
+  MENU_ID(IDC_2_MENU)
+  MENU_ID(IDC_3_MENU)
+  MENU_ID(IDC_4_MENU)
+  MENU_ID(IDC_5_MENU)
+  MENU_ID(IDC_6_MENU)
+  MENU_ID(IDC_7_MENU)
+
+  STRING_ID(IDR_LIBID)
+  STRING_ID(IDC_SHOW_STATIC)
+  STRING_ID(IDS_TABS)
+  STRING_ID(IDS_PROCESS)
+  STRING_ID(ID_BUTTON1)
+  STRING_ID(ID_BUTTON2)
+  STRING_ID(ID_BUTTON3)
+  STRING_ID(IDS_RECT)
+  STRING_ID(IDS_CIRCLE)
+  STRING_ID(IDS_TRIANGLE)
+  STRING_ID(ID_DB_NOT_FOUND_ERROR)
+  STRING_ID(ID_DB_ERROR)
+  STRING_ID(FULL_PATH_TO_REQUIRED_FILE)
+  STRING_ID(FULL_PATH_TO_SETUP_FILE)
+  STRING_ID(RELATIVE_PATH_TO_REQUIRED_FILE)
+  STRING_ID(SPECIFY_THE_SLIDE_ANCHOR)
+  STRING_ID(ENTER_SLIDE_ID)
+  STRING_ID(SELECTION_GROUP_IS_EMPTY)
+  STRING_ID(ALL_FILES)
+  STRING_ID(ENTER_INDEX)
+  STRING_ID(SQLITE_FILES_FILTER)
+  STRING_ID(DOCUMENT_ERROR)
+  STRING_ID(SAMPLE_END)
+  STRING_ID(REJECTION)
+  STRING_ID(DOCUMENT2D_FILTER)
+  STRING_ID(FILE_PATH_MESSAGE)
+  STRING_ID(INDEX_OUT)
+
+  resourceModule->End();
+}

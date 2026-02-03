@@ -1,0 +1,4 @@
+﻿#pragma once
+
+// Загрузка строки из ресурсов
+std::wstring LoadStr(std::int32_t strID);

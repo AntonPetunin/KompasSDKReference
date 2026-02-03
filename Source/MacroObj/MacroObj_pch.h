@@ -1,0 +1,5 @@
+#pragma once
+
+#include <KsAPI.h>
+#include <KompasLibraryActions.h>
+#include <TransferService.h>

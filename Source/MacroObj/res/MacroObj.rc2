@@ -1,0 +1,30 @@
+#ifdef APSTUDIO_INVOKED
+  #error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+//-------------------------------------------------------------------------------
+//  StringTable
+// ---
+STRINGTABLE DISCARDABLE 
+BEGIN
+  IDS_CAPTION      "Параметры отверстия"
+  IDS_TAB_NAME     "Редактирование объекта"
+  ID_DIAMETER      "Диаметр"
+  ID_FACE1         "Грань 1"
+  ID_FACE2         "Грань 2"
+  ID_CHOICE1       "&Грань 1"
+  ID_CHOICE2       "Г&рань 2"
+  IDP_CHOICE1      "&Грань 1"
+  IDP_CHOICE2      "Г&рань 2"
+  IDS_NO_FACE      "Грани не указаны"
+  ID_VARIABLE_NAME "Имя переменной"
+  IDP_DEFAULTNAME  "Укажите грань"
+END
+
+// Иконки команд
+1001 BITMAP "res\\1001.bmp"
+ID_CHOICE1 BITMAP "res\\Face1.bmp"
+ID_CHOICE2 BITMAP "res\\Face2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+

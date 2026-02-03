@@ -1,0 +1,17 @@
+﻿#pragma once
+
+constexpr auto libName = L"Step8_KsAPI";
+
+#define FORMAT_ATTRINFO         100
+#define FORMAT_ATTRREMAINED     101
+#define FORMAT_ATTRTYPEINFO     102
+#define FORMAT_ATTRTYPEINFO2    103
+#define FORMAT_ATTRTYPEINFO3    104
+#define FORMAT_COLUMNINFO       105
+#define FORMAT_COLUMNINFO2      106
+#define FORMAT_COLUMNINFORECORD 107
+
+#define CANTCREATEATTRIBUTE 200
+#define DELETEATTRIBUTE     201
+#define ENTERPASSWORD       202
+#define PICKOBJECT          203

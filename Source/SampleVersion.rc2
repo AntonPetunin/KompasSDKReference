@@ -1,0 +1,32 @@
+////////////////////////////////////////////////////////////////////////////////
+// Пример информации о версии приложения КОМПАС
+
+#include <winver.h>
+
+#define STR1(x) #x
+#define STR2(x) STR1(x)
+
+VS_VERSION_INFO VERSIONINFO
+  FILEVERSION    BuildVersionMajor, BuildVersionMinor, BuildVersionPatch, BuildVersionBuild
+  PRODUCTVERSION BuildVersionMajor, BuildVersionMinor, BuildVersionPatch, BuildVersionBuild
+  FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+  FILEFLAGS      VS_FF_SPECIALBUILD
+  FILEOS         VOS_NT
+  FILETYPE       VFT_DLL
+  FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+  BLOCK "StringFileInfo" BEGIN BLOCK "041904B0" BEGIN // Ru, Unicode
+    VALUE "FileDescription",   VI_SAMPLE_NAME
+    VALUE "FileVersion",       STR2(BuildVersionMajor) "." STR2(BuildVersionMinor) "." STR2(BuildVersionPatch) "." STR2(BuildVersionBuild)
+    VALUE "ProductVersion",    STR2(BuildVersionMajor)
+    VALUE "ProductName",       "Пример приложения КОМПАС"
+    VALUE "CompanyName",       "АСКОН"
+    VALUE "LegalTrademarks",   "АСКОН и КОМПАС являются зарегистрированными товарными знаками ЗАО АСКОН"
+    VALUE "InternalName",      VI_SAMPLE_FILE
+    VALUE "OriginalFilename",  VI_SAMPLE_FILE
+    VALUE "Comments",          VI_SAMPLE_NAME
+  END END
+  BLOCK "VarFileInfo" BEGIN
+    VALUE "Translation", 0x419, 1200 // Ru, Unicode
+  END
+END

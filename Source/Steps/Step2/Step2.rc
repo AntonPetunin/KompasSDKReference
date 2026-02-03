@@ -1,0 +1,9 @@
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+///////////////////////////////////////////////////////////////////////
+// Информация о версии
+#define VI_SAMPLE_NAME "Пример Step2"
+#define VI_SAMPLE_FILE "Step2.rtw"
+
+#include "..\..\SampleVersion.rc2"

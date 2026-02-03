@@ -1,0 +1,9 @@
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+///////////////////////////////////////////////////////////////////////
+// Информация о версии
+#define VI_SAMPLE_NAME "Пример Step4_KsAPI_2D"
+#define VI_SAMPLE_FILE "Step4_KsAPI_2D.rtw"
+
+#include "..\..\SampleVersion.rc2"
