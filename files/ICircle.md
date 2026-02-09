@@ -500,27 +500,28 @@ circle->SetRadius(10);
 
 ```cpp
 // Source/Steps/Step3D3/Step3D3.cpp
-void Circle(ksapi::IFragmentDocumentPtr fragmentDocument, double xc, double yc,
-            double radius, ksCurveStyleEnum style)
+void Circle(ksapi::IFragmentDocumentPtr fragmentDocument, double xc, double yc, double radius, int32_t style)                                                      
 {
-    if (!fragmentDocument)
-        return;
-
-    ksapi::IDrawingContainerPtr drawingContainer = fragmentDocument->GetDrawingContainer();
-    if (!drawingContainer)
-        return;
-
-    if (ksapi::ICirclesPtr circles = drawingContainer->GetCircles())
+  if (ksapi::IViewsAndLayersManagerPtr layersMngr = fragmentDocument->GetViewsAndLayersManager())
+  {
+    if (ksapi::IViewsPtr views = layersMngr->GetViews())
     {
-        if (ksapi::ICirclePtr circle = circles->Add())
+      if (ksapi::IDrawingContainerPtr drawingContainer = views->GetActiveView())
+      {
+        if (ksapi::ICirclesPtr circles = drawingContainer->GetCircles())
         {
+          if (ksapi::ICirclePtr circle = circles->Add())
+          {
             circle->SetXc(xc);
             circle->SetYc(yc);
             circle->SetRadius(radius);
-            circle->SetStyle(static_cast<int32_t>(style));
+            circle->SetStyle(style);
             circle->Update();
+          }
         }
+      }
     }
+  }
 }
 ```
 
@@ -550,23 +551,7 @@ ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainerPtr drawingContainer, dou
 }
 ```
 
-### Пример 3: Создание штриховки между двумя концентрическими окружностями
-
-```cpp
-// Source/Steps/Step7/Step7.cpp
-void CreateHatchBetweenCircles(ksapi::IDrawingContainerPtr drawingContainer)
-{
-    // Создаём две концентрические окружности
-    ksapi::ICirclePtr circle1 = CreateCircle(drawingContainer, 30, 30, 20);
-    ksapi::ICirclePtr circle2 = CreateCircle(drawingContainer, 30, 30, 10);
-
-    // Создаём штриховку между ними
-    std::vector<ksapi::IDrawingObjectPtr> contours = {circle1, circle2};
-    ksapi::IHatchPtr hatch = CreateHatch(drawingContainer, contours);
-}
-```
-
-### Пример 4: Получение окружности из коллекции по индексу
+### Пример 3: Получение окружности из коллекции по индексу
 
 ```cpp
 // Source/Steps/Step2_KsAPI_2D/Step2_KsAPI_2D.cpp
@@ -634,8 +619,7 @@ ksapi::ICirclePtr SafeCastToCircle(ksapi::IDrawingObjectPtr obj)
 
 ```cpp
 // Описание: Создание нескольких окружностей в цикле
-void CreateCirclesPattern(ksapi::IDrawingContainerPtr container, double centerX, double centerY,
-                          double startRadius, double radiusStep, int count)
+void CreateCirclesPattern(ksapi::IDrawingContainerPtr container, double centerX, double centerY, double startRadius, double radiusStep, int count)
 {
     for (int i = 0; i < count; ++i)
     {
