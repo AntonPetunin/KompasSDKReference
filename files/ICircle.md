@@ -77,9 +77,9 @@
 ### Основные способы получения:
 
 1. **Из коллекции окружностей:**
-   - [`IDrawingContainer::GetCircles()`](KsAPI/KsAPI.h:27929) - получение коллекции окружностей из контейнера чертежа
-   - [`ICircles::Add()`](KsAPI/KsAPI.h:20183) - создание новой окружности
-   - [`ICircles::GetCircle(index)`](KsAPI/KsAPI.h:20181) - получение окружности по индексу
+   - [`IDrawingContainer::GetCircles()`](interface_page_files/IDrawingContainer.md) - получение коллекции окружностей из контейнера чертежа
+   - [`ICircles::Add()`](interface_page_files/ICircles.md) - создание новой окружности
+   - [`ICircles::GetCircle(index)`](interface_page_files/ICircles.md) - получение окружности по индексу
 
 2. **Из документа или контекста:**
    - При работе с эскизом 3D модели через `IFragmentDocument`
@@ -100,20 +100,19 @@ ksapi::ICirclePtr existingCircle = circles->GetCircle(0);
 
 // Пример 3: Приведение типа при работе с выбранным объектом
 ksapi::IDrawingObjectPtr baseObj = /* получение объекта */;
-if (baseObj->GetDrawingObjectType() == DrawingObjectTypeEnum::ksDrCircle)
+ksapi::ICirclePtr circle = baseObj;  // автоматическое приведение
+if (circle)
 {
-    ksapi::ICirclePtr circle = baseObj;  // автоматическое приведение
+
 }
+
 ```
 
 ## Дополнительные интерфейсы
 
 Интерфейс `ICircle` наследует функциональность от `IDrawingObject`, через которую доступны дополнительные интерфейсы:
 
-- **`IUserDataStorage`** - интерфейс хранения пользовательских данных
-- **`IPropertyKeeper`** - интерфейс работы со свойствами
 - **`ICurve2D`** - интерфейс математической кривой (доступен через `GetCurve2D()`)
-- **`IParametricConstraint`** - интерфейс параметрических ограничений
 
 **Связанные интерфейсы для работы с окружностями:**
 
@@ -284,12 +283,11 @@ double xPoint = circle->GetX();
 **Расширенный пример:**
 
 ```cpp
-// Создание окружности через центр и точку на окружности
-circle->SetXc(50.0);
-circle->SetYc(50.0);
-circle->SetX(70.0);  // Точка на окружности (с учётом радиуса)
-circle->SetY(50.0);
-circle->SetRadius(20.0);
+// Получение координат точки на окружности
+double xPoint = circle->GetX();
+
+// Изменение точки на окружности
+circle->SetX(xPoint + 5);
 circle->Update();
 ```
 
@@ -333,11 +331,9 @@ double yPoint = circle->GetY();
 
 ```cpp
 // Получение координат точки на окружности
-double xPoint = circle->GetX();
 double yPoint = circle->GetY();
 
 // Изменение точки на окружности
-circle->SetX(xPoint + 5);
 circle->SetY(yPoint + 5);
 circle->Update();
 ```
@@ -463,12 +459,13 @@ if (radius > 0)
 // НЕПРАВИЛЬНО
 ksapi::IDrawingObjectPtr baseObj = /* получение объекта */;
 ksapi::ICirclePtr circle = baseObj;  // Может быть не окружностью!
+// Работа с окружностью
 
 // ПРАВИЛЬНО
 ksapi::IDrawingObjectPtr baseObj = /* получение объекта */;
-if (baseObj->GetDrawingObjectType() == DrawingObjectTypeEnum::ksDrCircle)
+ksapi::ICirclePtr circle = baseObj;
+if (circle)
 {
-    ksapi::ICirclePtr circle = baseObj;  // Теперь безопасно
     // Работа с окружностью
 }
 ```
