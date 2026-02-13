@@ -162,7 +162,7 @@ if (ksapi::IViewsAndLayersManagerPtr viewMngr = doc2D->GetViewsAndLayersManager(
 
 **Примечания:**
 
-- Всегда проверяйте返回值 на `nullptr`
+- Всегда проверяйте указатель на `nullptr`
 - Коллекция видов включает системные и пользовательские виды
 - Активный вид можно получить через `views->GetActiveView()`
 
@@ -210,7 +210,7 @@ if (!layerGroups)
 
 **Примечания:**
 
-- Всегда проверяйте返回值 на `nullptr`
+- Всегда проверяйте указатель на `nullptr`
 - Слои внутри групп можно получить через `ILayerGroup::GetLayers()`
 
 ---
