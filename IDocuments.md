@@ -551,7 +551,7 @@ virtual ILoadCombinationsParamPtr GetLoadCombinationsParam(const std::wstring & 
 
 ---
 
-### SetDocumentSynchronize()
+### SetDocumentSynchronize() / IsDocumentSynchronize()
 
 [Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
 
