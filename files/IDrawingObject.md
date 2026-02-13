@@ -82,10 +82,10 @@
    - [`IDrawingObjects::GetItemByName()`](#idrawingobjectsgetitembyname) - получение по имени
 
 2. **Из вида (поиск по координатам):**
-   - [`IView::FindObject()`](files/IView.md#viewfindobject) - поиск объекта в виде по координатам
+   - [`IView::FindObject()`](interface_page_files/IView.md#viewfindobject) - поиск объекта в виде по координатам
 
 3. **Из контейнера чертежа:**
-   - [`IDrawingContainer::GetObjects()`](files/IDrawingContainer.md#getobjects) - получение всех объектов с фильтрацией по типам
+   - [`IDrawingContainer::GetObjects()`](interface_page_files/IDrawingContainer.md#getobjects) - получение всех объектов с фильтрацией по типам
 
 
 
@@ -129,19 +129,14 @@ std::vector<ksapi::IDrawingObjectPtr> objects = drawingContainer->GetObjects(typ
 - [`GetId()`](#getid) - получить идентификатор объекта
 - [`GetView()`](#getview) - получить вид объекта
 
-### Группа 2: Параметры и стиль
+### Группа 2: Свойства объекта (Get/Set пары)
 
-- [`GetStyle()`](#getstyle) - получить стиль объекта
-- [`SetStyle()`](#setstyle) - установить стиль объекта
-- [`GetDrawingObjectParamType()`](#getdrawingobjectparamtype) - получить тип параметров
-- [`SetDrawingObjectParamType()`](#setdrawingobjectparamtype) - установить тип параметров
-
-### Группа 3: Связанные Get/Set пары
-
-- [`GetLayerNumber()`](#getlayernumber) / [`SetLayerNumber()`](#setlayernumber) - получить/установить номер слоя
-- [`IsTransparentBackground()`](#istransparentbackground) / [`SetTransparentBackground()`](#settransparentbackground) - прозрачность фона
-- [`IsAutoTransparentBackground()`](#isautotransparentbackground) / [`SetAutoTransparentBackground()`](#setautotransparentbackground) - авто-прозрачность
-- [`GetLightObjectType()`](#getlightobjecttype) / [`SetLightObjectType()`](#setlightobjecttype) - способ подсветки
+- [`GetLayerNumber / SetLayerNumber`](#getlayernumber--setlayernumber) - номер слоя
+- [`GetStyle / SetStyle`](#getstyle--setstyle) - стиль линии
+- [`GetDrawingObjectParamType / SetDrawingObjectParamType`](#getdrawingobjectparamtype--setdrawingobjectparamtype) - тип параметризации
+- [`IsTransparentBackground / SetTransparentBackground`](#istransparentbackground--settransparentbackground) - прозрачность фона
+- [`IsAutoTransparentBackground / SetAutoTransparentBackground`](#isautotransparentbackground--setautotransparentbackground) - авто-прозрачность
+- [`GetLightObjectType / SetLightObjectType`](#getlightobjecttype--setlightobjecttype) - способ подсветки
 
 ### Группа 4: Параметризация
 
@@ -250,23 +245,27 @@ for (const auto& obj : objects)
 
 ---
 
-### GetLayerNumber
+### GetLayerNumber / SetLayerNumber
 
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Возвращает номер слоя, на котором расположен объект.
+**Кратко:** Получить и установить номер слоя, на котором расположен объект.
 
-**Полное описание:** Метод позволяет получить информацию о текущем слое размещения объекта. Слои используются для организации объектов чертежа и управления их видимостью и доступностью для редактирования.
+**Полное описание:**
+Методы `GetLayerNumber()` и `SetLayerNumber()` позволяют получить и изменить слой размещения объекта. Слои используются для организации объектов чертежа и управления их видимостью и доступностью для редактирования. Для вида метод возвращает номер активного слоя вида.
 
 **Синтаксис:**
 
 ```cpp
 virtual int32_t GetLayerNumber() = 0;
+virtual void SetLayerNumber(int32_t layerNumber) = 0;
 ```
 
-**Параметры:** Метод не имеет параметров.
+**Параметры SetLayerNumber:**
 
-**Возвращаемое значение:** Номер слоя (int32_t), на котором расположен объект.
+- `layerNumber` (in) - номер целевого слоя
+
+**Возвращаемое значение GetLayerNumber:** Номер слоя (int32_t), на котором расположен объект.
 
 #### **Пример использования**
 
@@ -275,6 +274,10 @@ virtual int32_t GetLayerNumber() = 0;
 ```cpp
 // Получение номера слоя объекта
 int32_t layerNumber = obj->GetLayerNumber();
+
+// Перемещение объекта на слой 2
+obj->SetLayerNumber(2);
+obj->Update();
 ```
 
 **Расширенный пример:**
@@ -289,53 +292,6 @@ for (const auto& obj : objects)
     objectsByLayer[layerNum].push_back(obj);
 }
 
-// Вывод информации о слоях
-for (const auto& [layer, layerObjects] : objectsByLayer)
-{
-    std::wcout << L"Слой " << layer << L": " << layerObjects.size() << L" объектов" << std::endl;
-}
-```
-
-**Примечания:**
-
-- Слои нумеруются с 0 или 1 в зависимости от настроек документа
-- Для видов метод возвращает номер активного слоя вида
-
----
-
-### SetLayerNumber
-
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Перемещает объект на указанный слой.
-
-**Полное описание:** Метод изменяет слой размещения объекта. После вызова необходимо обязательно вызвать `Update()` для применения изменений. Перемещение между слоями влияет на видимость и доступность объекта для редактирования.
-
-**Синтаксис:**
-
-```cpp
-virtual void SetLayerNumber(int32_t layerNumber) = 0;
-```
-
-**Параметры:**
-
-- `layerNumber` (in) - номер целевого слоя
-
-**Возвращаемое значение:** Метод не возвращает значение.
-
-#### **Пример использования**
-
-**Минимальный пример:**
-
-```cpp
-// Перемещение объекта на слой 2
-obj->SetLayerNumber(2);
-obj->Update();
-```
-
-**Расширенный пример:**
-
-```cpp
 // Перемещение выбранных объектов на новый слой
 int32_t newLayer = 3;
 for (const auto& selectedObj : selectedObjects)
@@ -344,16 +300,14 @@ for (const auto& selectedObj : selectedObjects)
     if (!selectedObj->Update())
     {
         // Обработка ошибки
-        kompasApp->ShowMessageBox(L"Ошибка", L"Не удалось переместить объект на слой", 
-                                  ksapi::ksMessageWarning, ksapi::ksButtonSetOk, true);
     }
 }
 ```
 
 **Примечания:**
 
+- Слои нумеруются с 0 или 1 в зависимости от настроек документа
 - Обязательно вызывайте `Update()` после изменения слоя
-- Проверьте существование целевого слоя перед перемещением
 
 ---
 
@@ -528,9 +482,8 @@ for (int i = 0; i < 10; i++)
 
 **Примечания:**
 
-- **ЭТО САМЫЙ ВАЖНЫЙ МЕТОД** - всегда вызывайте Update() после изменения параметров
+- Всегда вызывайте Update() после изменения параметров
 - Если Update() вернул false, объект находится в некорректном состоянии
-- Некоторые объекты требуют Update() перед чтением определенных свойств
 
 ---
 
@@ -642,14 +595,15 @@ if (it != objectMap.end())
 void PrintObjectInfo(ksapi::IDrawingObjectPtr obj)
 {
     int64_t id = obj->GetId();
-    auto type = obj->GetDrawingObjectType();
-    std::wcout << L"Object ID: " << id << L", Type: " << static_cast<int>(type) << std::endl;
+    kompasApp->ShowMessageBox(L"ID", 
+                            L"Не удалось удалить объект типа " + 
+                            std::to_wstring(static_cast<int>(id)),
+                            ksapi::ksMessageInformation, ksapi::ksButtonSetOk, true);
 }
 ```
 
 **Примечания:**
 
-- Временные объекты могут иметь ID = 0
 - ID остается постоянным до удаления объекта
 - ID можно использовать для сериализации и хранения ссылок на объекты
 
@@ -690,71 +644,51 @@ if (view)
 
 **Примечания:**
 
-- Возвращает nullptr для объектов не принадлежащих виду (слои документа)
 - Всегда проверяйте возвращаемый указатель на nullptr
 
 ---
 
-### GetStyle
+### GetStyle / SetStyle
 
-[Параметры и стиль](#группа-2-параметры-и-стиль) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Возвращает стиль линии/текста/штриховки объекта.
+**Кратко:** Получить и установить стиль линии/текста/штриховки объекта.
 
-**Полное описание:** Метод возвращает целочисленный идентификатор стиля объекта. Стиль определяет внешний вид объекта: тип линии (основная, тонкая, осевая), параметры штриховки или характеристики текста.
+**Полное описание:**
+Методы `GetStyle()` и `SetStyle()` позволяют получить и изменить стиль отображения объекта. Стиль определяет внешний вид объекта: тип линии (основная, тонкая, осевая), параметры штриховки или характеристики текста.
 
 **Синтаксис:**
 
 ```cpp
 virtual int32_t GetStyle() = 0;
-```
-
-**Параметры:** Метод не имеет параметров.
-
-**Возвращаемое значение:** Идентификатор стиля (int32_t).
-
-#### **Пример использования**
-
-```cpp
-// Изменение стиля объекта
-int32_t currentStyle = obj->GetStyle();
-int32_t newStyle = 2;  // Осевая линия
-obj->SetStyle(newStyle);
-obj->Update();
-```
-
-**Примечания:**
-
-- Стили задаются в системных таблицах КОМПАС
-- Типичные значения: 1 - основная, 2 - осевая, 3 - тонкая
-
----
-
-### SetStyle
-
-[Параметры и стиль](#группа-2-параметры-и-стиль) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Устанавливает стиль линии/текста/штриховки объекта.
-
-**Полное описание:** Метод изменяет стиль отображения объекта. После изменения стиля необходимо вызвать `Update()` для применения изменений.
-
-**Синтаксис:**
-
-```cpp
 virtual void SetStyle(int32_t style) = 0;
 ```
 
-**Параметры:**
+**Параметры SetStyle:**
 
 - `style` (in) - идентификатор нового стиля
 
-**Возвращаемое значение:** Метод не возвращает значение.
+**Возвращаемое значение GetStyle:** Идентификатор стиля (int32_t).
 
 #### **Пример использования**
 
+**Минимальный пример:**
+
 ```cpp
-// Установка стиля осевой линии
-obj->SetStyle(2);  // Осевая линия
+// Получение текущего стиля
+int32_t currentStyle = obj->GetStyle();
+
+// Установка стиля линии
+obj->SetStyle(2);  
+obj->Update();
+```
+
+**Расширенный пример:**
+
+```cpp
+// Изменение стиля объекта
+int32_t newStyle = 2; 
+obj->SetStyle(newStyle);
 if (obj->Update())
 {
     // Стиль применен успешно
@@ -763,66 +697,53 @@ if (obj->Update())
 
 **Примечания:**
 
+- Стили задаются в системных таблицах КОМПАС
 - Обязательно вызывайте `Update()` после изменения стиля
-- Проверяйте допустимость стиля для данного типа объекта
 
 ---
 
-### GetDrawingObjectParamType
+### GetDrawingObjectParamType / SetDrawingObjectParamType
 
-[Параметры и стиль](#группа-2-параметры-и-стиль) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Возвращает тип параметризации объекта.
+**Кратко:** Получить и установить тип параметризации объекта.
 
-**Полное описание:** Метод определяет, как создавался объект: в параметрическом режиме, обычном режиме или со специфическими параметрами.
+**Полное описание:**
+Методы `GetDrawingObjectParamType()` и `SetDrawingObjectParamType()` позволяют установить и получить тип используемой матрицы для пересчета параметров объектов. От матрицы зависят возвращаемые значения координат, углов и скалярных величин размеров, например, радиус, высота, длина..
 
 **Синтаксис:**
 
 ```cpp
 virtual ksDrawingObjectParamTypeEnum GetDrawingObjectParamType() = 0;
+virtual void SetDrawingObjectParamType(ksDrawingObjectParamTypeEnum paramType) = 0;
 ```
 
-**Параметры:** Метод не имеет параметров.
+**Параметры SetDrawingObjectParamType:**
 
-**Возвращаемое значение:** Значение перечисления `ksDrawingObjectParamTypeEnum`.
+- `paramType` (in) - тип параметризации
+
+**Возвращаемое значение GetDrawingObjectParamType:** Значение перечисления `ksDrawingObjectParamTypeEnum`.
 
 #### **Пример использования**
 
 ```cpp
+// Получение типа параметризации
 ksapi::ksDrawingObjectParamTypeEnum paramType = obj->GetDrawingObjectParamType();
 
 switch (paramType)
 {
-    case ksapi::ksDrawingObjectParamTypeEnum::ksParametric:
-        // Параметрический объект
+    case ksapi::ksDrawingObjectParamTypeEnum::ksSheetAllParam:
+        // Все параметры объекта в СК листа
         break;
-    case ksapi::ksDrawingObjectParamTypeEnum::ksSimple:
-        // Обычный объект
+    case ksapi::ksDrawingObjectParamTypeEnum::ksViewAllParam:
+        // Все параметры объекта в СК вида
         break;
 }
+
+// Изменение типа параметризации
+obj->SetDrawingObjectParamType(ksDrawingObjectParamTypeEnum::ksViewAllParam);
+obj->Update();
 ```
-
----
-
-### SetDrawingObjectParamType
-
-[Параметры и стиль](#группа-2-параметры-и-стиль) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Устанавливает тип параметризации объекта.
-
-**Полное описание:** Метод позволяет изменить режим параметризации объекта. Используется для переключения между параметрическим и обычным режимами.
-
-**Синтаксис:**
-
-```cpp
-virtual void SetDrawingObjectParamType(ksDrawingObjectParamTypeEnum paramType) = 0;
-```
-
-**Параметры:**
-
-- `paramType` (in) - тип параметризации
-
-**Возвращаемое значение:** Метод не возвращает значение.
 
 ---
 
@@ -927,6 +848,14 @@ virtual bool Associate() = 0;
 
 **Возвращаемое значение:** true - ассоциация установлена успешно.
 
+```cpp
+
+if (obj->Associate())
+{
+    // ассоциация установлена успешно
+}
+```
+
 ---
 
 ### GetConstraintsState
@@ -954,14 +883,14 @@ ksapi::ksObjectConstraintsStateEnum state = obj->GetConstraintsState();
 
 switch (state)
 {
-    case ksapi::ksObjectConstraintsStateEnum::ksUnderconstrained:
-        // Недоопределен - можно добавить ограничения
+    case ksapi::ksObjectConstraintsStateEnum::ksObjectStateUnknown:
+        // Обычный не параметризованный объект
         break;
-    case ksapi::ksObjectConstraintsStateEnum::ksCorrect:
-        // Корректно определен
+    case ksapi::ksObjectConstraintsStateEnum::ksObjectStateFullDefined:
+        // Полностью определенный объект
         break;
-    case ksapi::ksObjectConstraintsStateEnum::ksOverconstrained:
-        // Переопределен - есть лишние ограничения
+    case ksapi::ksObjectConstraintsStateEnum::ksObjectStateOverDefined:
+        // Переопределённый объект(размер)
         break;
 }
 ```
@@ -1101,137 +1030,123 @@ virtual bool IsVisibleInAssociationView() = 0;
 
 ---
 
-### IsTransparentBackground
+### IsTransparentBackground / SetTransparentBackground
 
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Проверяет режим прозрачности фона для аннотационных объектов.
+**Кратко:** Получить и установить режим прозрачности фона для аннотационных объектов.
 
-**Полное описание:** Метод возвращает текущий режим отрисовки фона под аннотационными объектами (размеры, тексты). Прозрачный фон не очищает область под объектом.
+**Полное описание:**
+Методы `IsTransparentBackground()` и `SetTransparentBackground()` позволяют получить и изменить режим отрисовки фона под аннотационными объектами (размеры, тексты). Прозрачный фон не очищает область под объектом.
 
 **Синтаксис:**
 
 ```cpp
 virtual bool IsTransparentBackground() = 0;
+virtual void SetTransparentBackground(bool transparentBackground) = 0;
 ```
 
-**Параметры:** Метод не имеет параметров.
+**Параметры SetTransparentBackground:**
 
-**Возвращаемое значение:** true - прозрачный фон включен.
+- `transparentBackground` (in) - true для прозрачного фона
+
+**Возвращаемое значение IsTransparentBackground:** true - прозрачный фон включен.
 
 #### **Пример использования**
 
 ```cpp
+// Получение текущего режима
+bool isTransparent = obj->IsTransparentBackground();
+
 // Установка прозрачного фона для текста
 textObj->SetTransparentBackground(true);
 textObj->Update();
 ```
 
----
+**Примечания:**
 
-### SetTransparentBackground
-
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Устанавливает режим прозрачности фона.
-
-**Полное описание:** Метод включает или отключает прозрачную отрисовку фона под объектом. После изменения необходимо вызвать `Update()`.
-
-**Синтаксис:**
-
-```cpp
-virtual void SetTransparentBackground(bool transparentBackground) = 0;
-```
-
-**Параметры:**
-
-- `transparentBackground` (in) - true для прозрачного фона
-
-**Возвращаемое значение:** Метод не возвращает значение.
+- Применяется к аннотационным объектам (тексты, размеры)
+- Обязательно вызывайте `Update()` после изменения
 
 ---
 
-### IsAutoTransparentBackground
+### IsAutoTransparentBackground / SetAutoTransparentBackground
 
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Проверяет использование авто-режима прозрачности из настроек документа.
+**Кратко:** Получить и установить режим авто-прозрачности фона из настроек документа.
 
-**Полное описание:** Метод определяет, управляется ли прозрачность фона настройками документа или задана явно для объекта.
+**Полное описание:**
+Методы `IsAutoTransparentBackground()` и `SetAutoTransparentBackground()` позволяют получить и изменить режим управления прозрачностью фона. Если авто-режим включен, прозрачность определяется настройками документа.
 
 **Синтаксис:**
 
 ```cpp
 virtual bool IsAutoTransparentBackground() = 0;
-```
-
-**Параметры:** Метод не имеет параметров.
-
-**Возвращаемое значение:** true - используется авто-режим.
-
----
-
-### SetAutoTransparentBackground
-
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Устанавливает авто-режим прозрачности.
-
-**Полное описание:** Метод включает или отключает автоматическое управление прозрачностью через настройки документа.
-
-**Синтаксис:**
-
-```cpp
 virtual void SetAutoTransparentBackground(bool autoTransparentBackground) = 0;
 ```
 
-**Параметры:**
+**Параметры SetAutoTransparentBackground:**
 
 - `autoTransparentBackground` (in) - true для авто-режима
 
-**Возвращаемое значение:** Метод не возвращает значение.
+**Возвращаемое значение IsAutoTransparentBackground:** true - используется авто-режим.
+
+#### **Пример использования**
+
+```cpp
+// Получение режима
+bool isAuto = obj->IsAutoTransparentBackground();
+
+// Включение авто-режима
+obj->SetAutoTransparentBackground(true);
+obj->Update();
+```
+
+**Примечания:**
+
+- Авто-режим использует настройки документа
+- Отключение авто-режима позволяет задать прозрачность явно
 
 ---
 
-### GetLightObjectType
+### GetLightObjectType / SetLightObjectType
 
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
+[Свойства объекта (Get/Set пары)](#группа-2-свойства-объекта-getset-пары) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Возвращает способ подсветки объекта.
+**Кратко:** Получить и установить способ подсветки объекта (цветом выделения или цветом выбора).
 
-**Полное описание:** Метод определяет, как подсвечивается объект при выделении: цветом выделения или цветом выбора.
+**Полное описание:**
+Методы `GetLightObjectType()` и `SetLightObjectType()` позволяют получить и изменить режим визуальной подсветки объекта при его выделении или выборе.
 
 **Синтаксис:**
 
 ```cpp
 virtual ksLightObjectTypeEnum GetLightObjectType() = 0;
-```
-
-**Параметры:** Метод не имеет параметров.
-
-**Возвращаемое значение:** Значение перечисления `ksLightObjectTypeEnum`.
-
----
-
-### SetLightObjectType
-
-[Связанные Get/Set пары](#группа-3-связанные-getset-пары) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Устанавливает способ подсветки объекта.
-
-**Полное описание:** Метод задает режим визуальной подсветки объекта при его выделении или выборе.
-
-**Синтаксис:**
-
-```cpp
 virtual void SetLightObjectType(ksLightObjectTypeEnum lightObjectType) = 0;
 ```
 
-**Параметры:**
+**Параметры SetLightObjectType:**
 
 - `lightObjectType` (in) - тип подсветки
 
-**Возвращаемое значение:** Метод не возвращает значение.
+**Возвращаемое значение GetLightObjectType:** Значение перечисления `ksLightObjectTypeEnum`.
+
+#### **Пример использования**
+
+```cpp
+// Получение типа подсветки
+ksapi::ksLightObjectTypeEnum lightType = obj->GetLightObjectType();
+
+// Установка типа подсветки
+obj->SetLightObjectType(ksapi::ksLightObjectTypeEnum::ksSelectObject);
+obj->Update();
+```
+
+**Примечания:**
+
+- Определяет визуальное поведение при выделении объекта
+- Обязательно вызывайте `Update()` после изменения
 
 ---
 
@@ -1584,6 +1499,190 @@ void FindIntersections(ksapi::IDrawingObjectPtr obj1, ksapi::IDrawingObjectPtr o
 
 ---
 
+### Пример 4: Определение типа объекта и безопасное приведение (из Source/Steps/Step2_KsAPI_2D)
+
+```cpp
+// Выбор объекта пользователем и определение его типа
+ksapi::IDrawingObjectPtr ExecuteFindObjectProcess(int32_t command, ksCursorEnum cursorType)
+{
+    // ... процесс выбора объекта ...
+    ksapi::IDrawingObjectPtr baseObj;
+    
+    // Запустить процесс указания объекта
+    if (baseObj = ExecuteFindObjectProcess(...))
+    {
+        // Получить тип объекта
+        auto type = baseObj->GetDrawingObjectType();
+        
+        // Проверка типа - отрезок
+        if (type == DrawingObjectTypeEnum::ksDrLineSeg || 
+            type == DrawingObjectTypeEnum::ksDrPolyline)
+        {
+            // Работа с отрезком или полилинией
+        }
+        // Проверка типа - окружность
+        else if (type == DrawingObjectTypeEnum::ksDrCircle)
+        {
+            // Работа с окружностью
+        }
+        // Проверка типа - дуга
+        else if (type == DrawingObjectTypeEnum::ksDrArc)
+        {
+            // Работа с дугой
+        }
+    }
+    return baseObj;
+}
+```
+
+**Пояснения:**
+- Всегда используйте `GetDrawingObjectType()` для определения типа перед приведением
+- Перечисление `DrawingObjectTypeEnum` содержит все возможные типы объектов
+- После определения типа безопасно приводите к конкретному интерфейсу
+
+---
+
+### Пример 5: Подписка на события объектов (из Source/Events/DrawingObjectEvent)
+
+```cpp
+// Подписка на события графических объектов
+void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
+{
+    // Создание объекта
+    events->AddCreateObjectHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
+    {
+        for (const auto& obj : objects)
+        {
+            std::wcout << L"Создан объект типа: " 
+                        << static_cast<int>(obj->GetDrawingObjectType()) << std::endl;
+        }
+        return true;
+    });
+
+    // Обновление объекта
+    events->AddUpdateObjectHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
+    {
+        for (const auto& obj : objects)
+        {
+            // Проверяем валидность после обновления
+            if (!obj->IsValid())
+            {
+                std::wcout << L"Объект стал невалидным!" << std::endl;
+            }
+        }
+        return true;
+    });
+
+    // Удаление объекта
+    events->AddDeleteHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
+    {
+        for (const auto& obj : objects)
+        {
+            std::wcout << L"Удален объект ID: " << obj->GetId() << std::endl;
+        }
+        return true;
+    });
+    
+    // Начало перемещения
+    events->AddBeginMoveHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
+    {
+        for (const auto& obj : objects)
+        {
+            // Сохраняем позицию до перемещения
+            int64_t id = obj->GetId();
+            // ...
+        }
+        return true;
+    });
+    
+    // Окончание перемещения
+    events->AddMoveHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
+    {
+        for (const auto& obj : objects)
+        {
+            // Проверяем новое состояние
+            if (obj->IsValid())
+            {
+                // Получаем связанный вид
+                ksapi::IViewPtr view = obj->GetView();
+                // ...
+            }
+        }
+        return true;
+    });
+}
+```
+
+**Пояснения:**
+- События позволяют отслеживать все изменения объектов в реальном времени
+- `AddCreateObjectHandler` - вызывается после создания объекта
+- `AddUpdateObjectHandler` - вызывается после редактирования
+- `AddDeleteHandler` - вызывается после удаления
+- `AddBeginMoveHandler`/`AddMoveHandler` - вызываются до и после перемещения
+- Возвращайте `true` из обработчика для продолжения обработки другими подписчиками
+
+---
+
+### Пример 6: Работа со слоями (из Source/Steps/Step7)
+
+```cpp
+// Перемещение объектов на разные слои
+void MoveObjectsToLayers(ksapi::IDrawingContainerPtr drawingContainer)
+{
+    // Получаем все объекты
+    std::vector<ksapi::IDrawingObjectPtr> objects = 
+        drawingContainer->GetObjects({ksapi::DrawingObjectTypeEnum::ksAllObj});
+
+    // Распределяем объекты по слоям (циклически)
+    for (size_t i = 0; i < objects.size(); i++)
+    {
+        ksapi::IDrawingObjectPtr obj = objects[i];
+        
+        // Пропускаем временные объекты
+        if (obj->IsTemp())
+            continue;
+            
+        // Устанавливаем номер слоя (0, 1, 2, ...)
+        int32_t layerNumber = static_cast<int32_t>(i % 3);  // 3 слоя
+        obj->SetLayerNumber(layerNumber);
+        
+        // Обязательно вызываем Update() после изменения
+        if (!obj->Update())
+        {
+            std::wcout << L"Ошибка перемещения объекта на слой " << layerNumber << std::endl;
+        }
+    }
+}
+
+// Получение всех объектов определенного слоя
+std::vector<ksapi::IDrawingObjectPtr> GetObjectsOnLayer(
+    ksapi::IDrawingContainerPtr drawingContainer, 
+    int32_t layerNumber)
+{
+    std::vector<ksapi::IDrawingObjectPtr> result;
+    std::vector<ksapi::IDrawingObjectPtr> allObjects = 
+        drawingContainer->GetObjects({ksapi::DrawingObjectTypeEnum::ksAllObj});
+    
+    for (const auto& obj : allObjects)
+    {
+        if (obj->GetLayerNumber() == layerNumber && !obj->IsTemp())
+        {
+            result.push_back(obj);
+        }
+    }
+    
+    return result;
+}
+```
+
+**Пояснения:**
+- `SetLayerNumber()` перемещает объект на указанный слой
+- После изменения любых параметров объекта всегда вызывайте `Update()`
+- Проверяйте возвращаемое значение `Update()` для обработки ошибок
+- Метод `GetLayerNumber()` позволяет фильтровать объекты по слою
+
+---
+
 ## Шаблоны использования
 
 ### Шаблон 1: Создание и настройка объекта
@@ -1679,10 +1778,10 @@ auto validGeometryObjects = FilterObjects(allObjects, [](auto obj)
 
 ### Работа в паре с:
 
-- **[`IDrawingObjects`](IDrawingObjects.md)** - коллекция графических объектов для批量ной работы
-- **[`IDrawingContainer`](files/IDrawingContainer.md)** - контейнер для размещения и управления объектами
-- **[`IView`](files/IView.md)** - вид, являющийся контейнером для объектов
-- **[`ICurve2D`](files/ICurve2D.md)** - математическое представление кривой объекта
+- **[`IDrawingObjects`](interface_page_files/IDrawingObjects.md)** - коллекция графических объектов для批量ной работы
+- **[`IDrawingContainer`](interface_page_files/IDrawingContainer.md)** - контейнер для размещения и управления объектами
+- **[`IView`](interface_page_files/IView.md)** - вид, являющийся контейнером для объектов
+- **[`ICurve2D`](interface_page_files/ICurve2D.md)** - математическое представление кривой объекта
 
 ### Часто используется вместе с:
 
@@ -1690,163 +1789,3 @@ auto validGeometryObjects = FilterObjects(allObjects, [](auto obj)
 - **[`IArc`](files/IArc.md)** - конкретный тип объекта (дуга)
 - **[`ICircle`](files/ICircle.md)** - конкретный тип объекта (окружность)
 - **[`IHatch`](files/IHatch.md)** - конкретный тип объекта (штриховка)
-- **[`IDocumentFrame`](files/IDocumentFrame.md)** - окно документа для координатных преобразований
-
----
-
-## Интерфейс IDrawingObjects (коллекция)
-
-### Общее описание
-
-**IDrawingObjects** - интерфейс коллекции графических объектов, предоставляющий доступ к массиву объектов [IDrawingObject](#интерфейс-idrawingobject).
-
-### Иерархия наследования
-
-<div style="padding: 10px; background: #f5f5f5; border-radius: 5px; max-width: auto; margin-bottom: 20px">
-<div class="top-parent">IKompasCollection</div>
-
-<div style="text-align: left; color:black; margin: 5px 15%;">▼</div>
-<div class="interface" style="margin: 5px 20%;">IDrawingObjects</div>
-</div>
-
-### Методы
-
-#### GetItem
-
-**Синтаксис:**
-
-```cpp
-virtual IDrawingObjectPtr GetItem(int32_t index) = 0;
-```
-
-**Параметры:**
-- `index` (in) - индекс объекта в коллекции (0-based)
-
-**Возвращаемое значение:** Указатель на объект [IDrawingObject](#интерфейс-idrawingobject).
-
-**Пример:**
-
-```cpp
-// Получение первого объекта в коллекции
-ksapi::IDrawingObjectsPtr objects = drawingContainer->GetObjects();
-ksapi::IDrawingObjectPtr first = objects->GetItem(0);
-```
-
-#### GetItemByName
-
-**Синтаксис:**
-
-```cpp
-virtual IDrawingObjectPtr GetItemByName(const std::wstring & name) = 0;
-```
-
-**Параметры:**
-- `name` (in) - имя объекта
-
-**Возвращаемое значение:** Указатель на объект [IDrawingObject](#интерфейс-idrawingobject).
-
-**Пример:**
-
-```cpp
-// Поиск объекта по имени
-ksapi::IDrawingObjectPtr obj = objects->GetItemByName(L"Основная надпись");
-```
-
----
-
-## Интерфейс IDrawingObjectEvents (события)
-
-### Общее описание
-
-**IDrawingObjectEvents** - интерфейс для подписки на события графических объектов. Позволяет отслеживать создание, редактирование, удаление и трансформацию объектов.
-
-### Иерархия наследования
-
-<div style="padding: 10px; background: #f5f5f5; border-radius: 5px; max-width: auto; margin-bottom: 20px">
-<div class="top-parent">IAPIObject</div>
-
-<div style="text-align: left; color:black; margin: 5px 15%;">▼</div>
-<div class="interface" style="margin: 5px 20%;">IDrawingObjectEvents</div>
-</div>
-
-### Основные события
-
-| Событие | Описание |
-|---------|----------|
-| `AddCreateObjectHandler` | Создание объекта |
-| `AddUpdateObjectHandler` | Редактирование объекта |
-| `AddDeleteHandler` | Удаление объекта |
-| `AddBeginDeleteHandler` | Начало удаления объекта |
-| `AddBeginMoveHandler` | Начало сдвига объекта |
-| `AddBeginRotateHandler` | Начало поворота объекта |
-| `AddBeginScaleHandler` | Начало масштабирования объекта |
-| `AddBeginCopyHandler` | Начало копирования объекта |
-| `AddBeginTransformHandler` | Начало трансформации объекта |
-
-### Пример подписки на события
-
-```cpp
-// Подписка на события создания и удаления объектов
-m_events->AddCreateObjectHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
-{
-    for (const auto& obj : objects)
-    {
-        std::wcout << L"Создан объект типа: " 
-                    << static_cast<int>(obj->GetDrawingObjectType()) << std::endl;
-    }
-    return true;
-});
-
-m_events->AddDeleteHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
-{
-    for (const auto& obj : objects)
-    {
-        std::wcout << L"Удален объект ID: " << obj->GetId() << std::endl;
-    }
-    return true;
-});
-```
-
----
-
-## Интерфейс IDrawingObjectEventsResult (результат события)
-
-### Общее описание
-
-**IDrawingObjectEventsResult** - интерфейс для получения дополнительной информации о событии трансформации объекта.
-
-### Методы
-
-| Метод | Описание |
-|-------|----------|
-| `GetNotifyType()` | Тип события |
-| `IsCopy()` | Признак копирования |
-| `GetSheetPoint()` | Координаты точки на листе |
-| `GetCopyObjects()` | Копии объектов |
-| `GetAngle()` | Угол поворота |
-| `GetScale()` | Масштаб по осям |
-| `IsUndoMode()` | Режим Undo |
-| `IsRedoMode()` | Режим Redo |
-
-### Пример использования
-
-```cpp
-// Получение информации о трансформации объекта
-void OnTransform(const std::vector<ksapi::IDrawingObjectPtr>& objects, 
-                 ksapi::IDrawingObjectEventsResultPtr eventResult)
-{
-    if (!eventResult)
-        return;
-
-    double angle = eventResult->GetAngle();
-    double sx, sy;
-    eventResult->GetScale(sx, sy);
-    
-    bool isCopy = eventResult->IsCopy();
-    
-    std::wcout << L"Трансформация:" << std::endl;
-    std::wcout << L"  Угол: " << angle << std::endl;
-    std::wcout << L"  Масштаб: " << sx << L" x " << sy << std::endl;
-    std::wcout << L"  Копирование: " << (isCopy ? L"Да" : L"Нет") << std::endl;
-}
-```
