@@ -1,0 +1,4624 @@
+{
+    "IAPIObject": {
+        "struct_parent": null,
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContextPanel": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ILibraryManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPropertyParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IObject2DHotPoint": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryHotPointsObject": {
+        "struct_parent": "ILibraryObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryPropertiesObject": {
+        "struct_parent": "ILibraryObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryConverter": {
+        "struct_parent": "ILibraryObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasLibraryActions": {
+        "struct_parent": null,
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISaveAsDetailParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDeleteHistoryParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHatchParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IAssociationView",
+            "IEmbodimentsManager",
+            "IAssociationViewElements",
+            "IBoundariesObject",
+            "IHatch"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDimensionParams": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILoadCombination": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager",
+            "IAssemblyDocument",
+            "IDismantleParameters"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPrintJobOutputParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPrintJob",
+            "IPrintJobPrinterSettings"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPrintJobPrinterSettings": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPrintJob",
+            "IPrintJobOutputParameters"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISaveToPreviousParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISystemSettings",
+            "ILibItemSettings",
+            "ISystemTemplatesSettings"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IUserMetadataManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPropertyKeeper",
+            "IKompasDocument",
+            "IStylesManager",
+            "IProductDataManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IIntervalVariable": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IVariable"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IReportFilter": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IReportObjectsFilter": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IChooseManager",
+            "IReportFilter",
+            "IReport",
+            "IReportParam",
+            "IReportTable"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IReportParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IChooseManager",
+            "IReportFilter",
+            "IReport",
+            "IReportObjectsFilter",
+            "IReportTable"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPropertyToolBar": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcessInfoWindow": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcessParam",
+            "IProcessContextIconMenu",
+            "IProcessContextPanel"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IProcessContextIconMenu": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcessParam",
+            "IProcessInfoWindow",
+            "IProcessContextPanel"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IEditDoubleManipulator": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseManipulator"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IAssociationViewElements": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IView",
+            "ICutViewParam",
+            "IBreakViewParam",
+            "IViewDesignation",
+            "IAssociationView",
+            "IEmbodimentsManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IBreakViewParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDrawingContainer",
+            "ISymbols2DContainer",
+            "IBuildingContainer",
+            "IView",
+            "ICutViewParam",
+            "IViewDesignation"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ITexturesParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IColorParam"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IAutoSortObjectsParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDocumentSettings",
+            "ILibItemSettings",
+            "IDocument2DSettings",
+            "ISnapSettings"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDrawingDocumentSettings": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDocument2DSettings",
+            "IAutoSortObjectsParameters",
+            "ISnapSettings"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ILibItemSettings": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISystemSettings",
+            "ISaveToPreviousParam",
+            "ISystemTemplatesSettings",
+            "IDocumentSettings",
+            "ILibArraySettings"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IColorParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISerializer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITable",
+            "ITableRange",
+            "ITolerance",
+            "IToleranceParam",
+            "ITolerance3D",
+            "IDrawingText",
+            "IText",
+            "ITextLine",
+            "ITextTable"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ICellFormat": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ICellBoundaries"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ICellBoundaries": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ICellFormat"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ITableRange": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITable"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPaintObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IGabaritObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelObjectEventsResult": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMassInertiaParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IThinParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChooseBodies": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IChooseObjects",
+            "ISheetMetalBody",
+            "IMirrorPattern"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IChooseObjects": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IChooseBodies",
+            "ISheetMetalBody"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISourcePartParams": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelCurve3D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IModelCurve3D",
+            "ISpiral3D",
+            "ILocalCSObject",
+            "ILocalCoordinateSystem",
+            "IMateConstraint3D",
+            "IMateInterval",
+            "IUserObject3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IUserParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IThreadsParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IThread"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IShellSurface": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IEvolution",
+            "IExtrusion",
+            "IExtrusionSurface",
+            "ILoft",
+            "IRotated",
+            "IRotatedSurface"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ITessellation": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IFace"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalUndercut": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISheetMetalLineBend"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IBranchs": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxisLineParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBoundariesObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAnnotativeObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyEditCheckBox": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPropertyEdit"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalRuledShell": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISheetMetalBody",
+            "IChooseBodies",
+            "IChooseObjects"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPlacement3DManipulator": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseManipulator"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IApplicationLicenseManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPLMObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ICopyGeometry",
+            "IEmbodimentsManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPLMObjectsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IModelsFamilyManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMultiThicknessGroupsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IShell"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDimension3D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDimensionText",
+            "IDimensionParams"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDimension2D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDimensionText"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDesignation3D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDesignation2D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasAPIObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISystemObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IKompasCollection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDocumentFrame": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDocumentFrameEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDocumentSettings": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ILibItemSettings"
+        ]
+    },
+    "ITextFont": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationSubsection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationSubsections": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockSectionTuning": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockSectionTunings": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockTuning": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockTunings": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationTuningSection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationTuningSections": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationTuning": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetFormat": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationColumnStyle": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationColumnStyles": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockStyle": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionalBlockStyles": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationSectionStyle": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationSectionStyles": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationColumnItem": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationColumnItems": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITextItem": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IHypertextReferenceParam"
+        ]
+    },
+    "ITextLine": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISerializer"
+        ]
+    },
+    "ITextTable": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISerializer"
+        ]
+    },
+    "IText": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISerializer"
+        ]
+    },
+    "ISpecificationColumn": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationColumns": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAttachedDocument": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAttachedDocuments": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationObjectCreateParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProperty": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserDataStorage": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserDataStorages": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserDataStoragesMng": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyKeeper": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStamp": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStampEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayoutSheet": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayoutSheetsEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayoutSheets": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILoadCombinationsParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IOpenDocumentParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyControl": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyControls": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTab": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTabs": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertiesManagerEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcessParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IProcessInfoWindow",
+            "IProcessContextIconMenu",
+            "IProcessContextPanel"
+        ]
+    },
+    "IPropertyManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibrary": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProceduresLibrary": {
+        "struct_parent": "ILibrary",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProceduresLibraries": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasError": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConverter": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProgressBar": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICancelableProgressBar": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibArraySettings": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ILibItemSettings"
+        ]
+    },
+    "IThreadPattern": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISystemSettings": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISaveToPreviousParam",
+            "ILibItemSettings"
+        ]
+    },
+    "ICurve2D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMath2D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPrintJobSheet": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPrintJob": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IPrintJobOutputParameters",
+            "IPrintJobPrinterSettings"
+        ]
+    },
+    "IStyle": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStyles": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingObjectEventsResult": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingObjectEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingObjects": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayer": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayers": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVariable": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IView": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ICutViewParam",
+            "IBreakViewParam",
+            "IViewDesignation"
+        ]
+    },
+    "IViews": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayerFilterCondition": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayerFilterConditions": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFeature": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IBodyParts"
+        ]
+    },
+    "IModelObjects": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVariableTable": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCoordinateSystem": {
+        "struct_parent": "IPoint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlacement3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecRough3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMateConstraint3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMateConstraints3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBody": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserFolder": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserFolders": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZone": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZoneDivision": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZonesManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISelectionManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISelectionManagerEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChooseManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IColumnInfo": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAttributeType": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAttribute": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITechnicalDemand3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IParametricConstraint": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBaseLeader": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILeaders": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFindObjectParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFindObjectParametersEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMacroObject": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingGroup": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingGroups": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICopyObjectParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPhantom2D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcess2D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcess"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IProcess2DEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayer3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayers3D": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBaseManipulator": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IManipulators": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcess3DManipulatorsEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcess3D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcess",
+            "IProcessWithVariables"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IProcess3DEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFindObject3DParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFindObject3DParametersEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecRough": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITechnicalDemand": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDimensionText": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAttrTypeMng": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStylesManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPropertyKeeper",
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IProductDataManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ICurveStyle": {
+        "struct_parent": "IStyle",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHatchStyle": {
+        "struct_parent": "IStyle",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITextStyle": {
+        "struct_parent": "IStyle",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationStyle": {
+        "struct_parent": "IStyle",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IReportStyleColumn": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IReportStyle": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IReportProcess": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INumericGroup": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IReportTable": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IChooseManager",
+            "IReportFilter",
+            "IReport",
+            "IReportParam",
+            "IReportObjectsFilter"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPropertyEdit": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertySeparator": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyList": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyCheckBox": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyMultiButton": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertySlideBox": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyUserWindow": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyGrid": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTextButton": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertySpinEdit": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyFileName": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyColor": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyEditList": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyBmpList": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyStyleList": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyGroupBegin": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyGroupEnd": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTwinSwitcher": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyPoint3D": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyPreviewText": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyAggregateControl": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcessContextPanel": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcessParam",
+            "IProcessInfoWindow",
+            "IProcessContextIconMenu"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPropertyBasePoint": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyMarking": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcess": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMouseEnterLeaveParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyReplaceList": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IViewDesignation": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDrawingContainer",
+            "ISymbols2DContainer",
+            "IBuildingContainer",
+            "IView",
+            "ICutViewParam",
+            "IBreakViewParam"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ICutViewParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDrawingContainer",
+            "ISymbols2DContainer",
+            "IBuildingContainer",
+            "IView",
+            "IBreakViewParam",
+            "IViewDesignation"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ILocalCoordinateSystem2D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCoordinateSystems2D": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAutoNumerationManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IVariableTable",
+            "IKompasDocument2D",
+            "IInsertionsManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDocument2DSettings": {
+        "struct_parent": "IDocumentSettings",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IAutoSortObjectsParameters",
+            "ISnapSettings"
+        ]
+    },
+    "IDocument3DSettings": {
+        "struct_parent": "IDocumentSettings",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IThreadDialogParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContentDialogEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContentDialogParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChoiceModelDialogParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IApplicationDialogs": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFormatLabelRules": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHypertextReferenceParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITextFont",
+            "ITextItem"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ITableCell": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITable": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITableRange"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IKompasDocument3DEventsResult": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPoints3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFeaturePattern": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFeaturePatterns": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfaceThickening": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfaceThickenings": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRotated": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRotateds": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IScaling3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IScalings3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBilletObsolete": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IEmbodimentsManager"
+        ]
+    },
+    "IBilletsObsoletes": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICollectionGeometry": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICollectionsGeometry": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserObject3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserObjects3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IThread": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IThreadsParameters"
+        ]
+    },
+    "IHole3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IHoleDisposal"
+        ]
+    },
+    "IHoles3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChamfer": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChamfers": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFillet": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFillets": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IIncline": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInclines": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IShell": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IMultiThicknessGroupsManager"
+        ]
+    },
+    "IShells": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBoolean": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBooleans": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICut": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICuts": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICoupling": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILoft": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILofts": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEvolution": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEvolutions": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnionComponents": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnionsComponents": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMoldCavity": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMoldCavities": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMacroObject3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMacroObjects3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBodyReposition": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBodyRepositions": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFullFillet": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFullFillets": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWireFrame3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWireFrames3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplitSolid": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplitSolids": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBend": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBends": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalLineBend": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalLineBends": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalSketchBend": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalSketchBends": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalClosedCorner": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalClosedCorners": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPlate": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPlates": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBendedStraighten": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBendedStraightens": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBendUnfoldParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IVariableTable",
+            "IPropertyKeeper",
+            "IMassInertiaParam",
+            "IUserParameters",
+            "IPart",
+            "IModelContainer",
+            "IAuxiliaryGeomContainer",
+            "ISheetMetalContainer",
+            "IEmbodimentsManager",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer",
+            "IPLMObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPressForming": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPressFormings": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalShoulder": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalShoulders": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalJalousie": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalJalousies": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalRib": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalRibs": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPunch": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalPunchs": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamDisplace": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamIntersect": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamCenter": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamCurve": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamSurface": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamProjection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBaseLineDimension3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineDimensions3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRadialDimension3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRadialDimensions3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDiametralDimension3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDiametralDimensions3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAngleDimension3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAngleDimensions3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBaseLeader3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILeaders3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRough3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRoughs3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBase3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBases3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITolerance3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISerializer",
+            "IToleranceParam"
+        ]
+    },
+    "ITolerances3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IThreads": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcDimension3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcDimensions3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISymbols3DContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineDimension3D": {
+        "struct_parent": "IBaseLineDimension3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveVertexParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpline3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplines3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCoordinateSystems": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPolyLine": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPolyLines": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IControlPoint": {
+        "struct_parent": "IPoint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IControlPoints": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConjunctivePoint": {
+        "struct_parent": "IPoint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConjunctivePoints": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfacesIntersectionCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfacesIntersectionCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistant3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistants3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITrimmedCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITrimmedCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConnectCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConnectCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFilletCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFilletCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArc3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcs3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveOutLine": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveOutLines": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveByLaw": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurvesByLaws": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IIsoparametricCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IIsoparametricCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IIsoparametricCurvesSet": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IIsoparametricCurvesSets": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplineOnSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplinesOnSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProjectionCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProjectionCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveBy2Projections": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurvesBy2Projections": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContour3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContours3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineSegment3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineSegments3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnhistoredCurve3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnhistoredCurves3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointsArrOnCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointsArrsOnCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointsArrOnSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IMeshAroundPointParam"
+        ]
+    },
+    "IPointsArrsOnSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointsArrFromFile": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointsArrsFromFiles": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMathCurve3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxis3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxes3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMathSurface3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlanes3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCSAxesDirectionParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCSEulerParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRoughParams": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCSOrientByObjectParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILocalCSObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfacePatch": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfacePatches": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFaceRemover": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFaceRemovers": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfaceSewer": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISurfaceSewers": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbsSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbsSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistantSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistantSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITrimmedSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITrimmedSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtensionSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtensionSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeshPointsSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeshPointsSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICloudPointsSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICloudPointsSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IImportedSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IImportedSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbsSurfaceByCurvesMesh": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbsSurfacesByCurvesMeshs": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IJointSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IJointSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRestoredSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRestoredSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFaceMover": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFaceMovers": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILinearPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPointDrivenPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircularPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPathPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDerivedPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DBy2VertexesParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMirrorPattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DByCoefficientsParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DBy2AnglesParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DByLocalCSParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DByObjectParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DAlongSurfaceNormalParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DByCurveParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IVector3DByScreenNormalParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutRotated": {
+        "struct_parent": "IRotated",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRotatedSurface": {
+        "struct_parent": "IRotated",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IShellSurface"
+        ]
+    },
+    "IPoint3DParamBySphere": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint3DParamByCylinder": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeshAroundPointParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPointsArrOnSurface"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IAxis3DBy2Points": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxis3DBy2Planes": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxis3DByConeface": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxis3DByEdge": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxis3DByPointAndObject": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DUnhistoried": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DByPlaneCurve": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DTangentToFaceInPoint": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DByOffset": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DBy3Points": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DByAngle": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DByEdgeAndPoint": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DParallelByPoint": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DPerpendicularByEdge": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DNormalToSurface": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DMiddle": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DByEdgeAndPlane": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DBy2Edge": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPlane3DTangentToFace": {
+        "struct_parent": "IPlane3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IToleranceRecalc": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IToleranceRecalcsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDocument3DManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMate3DByAngle": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMate3DByTangent": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMate3DSymmetry": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMate3DTransmission": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMate3DCamGear": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICountersinkHoleParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpotfacingHoleParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICountersinkSpotfacingHoleParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicHoleParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHoleDisposal": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IHole3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IVertex": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFace": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ITessellation"
+        ]
+    },
+    "IEdge": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILoop": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IOrientedEdge": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDistanceAngleMeasurement3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDistanceAngleMeasurements3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEdgeLengthMeasurement3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEdgeLengthMeasurements3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAreaMeasurement3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAreaMeasurements3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeasurementContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUserDesignationCompObj": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryHoleParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZoneParametersByObjects": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZoneDivisionParametersRegular": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZoneDivisionParametersByPlanes": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStep": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSection": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStepParametersByFreePlane": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStepParametersByOffsetPlane": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStepParametersByRotatedPlane": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStepParametersByZone": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxisLine3D": {
+        "struct_parent": "IAxis3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDismantleStep": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDismantleParameters": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager",
+            "IAssemblyDocument",
+            "ILoadCombination"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IDrawingText": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISerializer"
+        ]
+    },
+    "IDrawingTexts": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineSegment": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineSegments": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArc": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcs": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContour": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultiline": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultilines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingContour": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingContours": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircle": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircles": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoint": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPoints": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBezier": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBeziers": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMacroObjects": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILine": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPolyLine2D": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPolyLines2D": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbs": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbses": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRaster": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRasters": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEllipse": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEllipses": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEllipseArc": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEllipseArcs": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRectangle": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRectangles": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRegularPolygon": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRegularPolygons": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistant": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEquidistants": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHatch": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IHatchParam"
+        ]
+    },
+    "IHatches": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IColouring": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IColourings": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicCurve": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicCurves": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMark": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMarks": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMarkInsideForm": {
+        "struct_parent": "IMark",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMarkOnLine": {
+        "struct_parent": "IMark",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMarkOnLeader": {
+        "struct_parent": "IMark",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxisJut": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutUnitMarking": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutUnitMarkings": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnitMarking": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnitMarkings": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultiTextLeader": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultiTextLeaders": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnitNumber": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IUnitNumbers": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBrace": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBraces": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutLine": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutLines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRadialDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRadialDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDiametralDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDiametralDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAngleDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAngleDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBreakLineDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBreakLineDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHeightDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IHeightDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBreakRadialDimension": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBreakRadialDimensions": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRough": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRoughs": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBase": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBases": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITolerance": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IToleranceParam",
+            "ISerializer"
+        ]
+    },
+    "ITolerances": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingTable": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingTables": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IViewPointer": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IViewPointers": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICentreMarker": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICentreMarkers": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRemoteElement": {
+        "struct_parent": "IUnitMarking",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRemoteElements": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxisLine": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAxisLines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWaveLine": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWaveLines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBrokenLine": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBrokenLines": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircularCentres": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircularsCentres": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILinearCentres": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILinearsCentres": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConditionIntersect": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConditionIntersects": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBreakAngleDimension": {
+        "struct_parent": "IAngleDimension",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILeader": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseLeader",
+            "IBaseLeader3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMarkLeader": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseLeader",
+            "IBaseLeader3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPositionLeader": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseLeader",
+            "IBaseLeader3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IChangeLeader": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseLeader"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IBrandLeader": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IBaseLeader",
+            "IBaseLeader3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IToleranceParam": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITable",
+            "ITableRange",
+            "ITolerance",
+            "ISerializer",
+            "ITolerance3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IContourSegment": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContourLineSegment": {
+        "struct_parent": "IContourSegment",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IContourArc": {
+        "struct_parent": "IContourSegment",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAnnotativeContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICurveCopyObjectParam": {
+        "struct_parent": "ICopyObjectParam",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircleCopyObjectParam": {
+        "struct_parent": "ICopyObjectParam",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "INurbsByPoints": {
+        "struct_parent": "INurbs",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITextDocumentSection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITextDocumentSectionsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "ITextDocument"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IExternalTessellationObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExternalTextObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExternalTessellationManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ICircularCopyObjectParam": {
+        "struct_parent": "ICopyObjectParam",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeshCopyObjectParam": {
+        "struct_parent": "ICopyObjectParam",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyOpticalProps": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITablePattern": {
+        "struct_parent": "IFeaturePattern",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyLinkButton": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProductDataManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IPropertyKeeper",
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMeshObject3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IZoneParametersByBorderPoints": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDynamicCrossSectionStepParametersByBorderPoints": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IProcessWithVariables": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IProcess",
+            "IProcess3D"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IApplicationServices": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IResourcesModule": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IQualityManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IApplication": {
+        "struct_parent": null,
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IApplicationEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasDictionary": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDocuments": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasDocument": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager"
+        ]
+    },
+    "IKompasDocumentEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsert": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInserts": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertsLibrary": {
+        "struct_parent": "ILibrary",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertsLibraries": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryManagerEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILibraryManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IContextPanel"
+        ]
+    },
+    "ISpecificationDocument": {
+        "struct_parent": "IKompasDocument",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ITextDocument": {
+        "struct_parent": "IKompasDocument",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ITextDocumentSectionsManager"
+        ]
+    },
+    "IReport": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IReportParam",
+            "IReportObjectsFilter",
+            "IReportTable"
+        ]
+    },
+    "IPropertyMng": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAssociationTable": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAssociationTables": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISymbols2DContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDrawingContainer",
+            "IBuildingContainer"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationDescriptions": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationDescription": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationDescriptionEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationBaseObjects": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationBaseObject": {
+        "struct_parent": "ISpecificationObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationCommentObject": {
+        "struct_parent": "ISpecificationObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationCommentObjects": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasDocument2DEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasDocument2D": {
+        "struct_parent": "IKompasDocument",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IAutoNumerationManager",
+            "IInsertionsManager"
+        ]
+    },
+    "IDrawingDocument": {
+        "struct_parent": "IKompasDocument2D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IFragmentDocument": {
+        "struct_parent": "IKompasDocument2D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionDefinition": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISketch": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISketchs": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtrusion": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtrusions": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRib": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRibs": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICutExtrusion": {
+        "struct_parent": "IExtrusion",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalBody": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IChooseBodies",
+            "IChooseObjects"
+        ]
+    },
+    "ISheetMetalBodies": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalHole": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalHoles": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalCut": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalCuts": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IVariableTable",
+            "IPropertyKeeper",
+            "IMassInertiaParam",
+            "IUserParameters",
+            "IPart",
+            "IModelContainer",
+            "IAuxiliaryGeomContainer",
+            "IEmbodimentsManager",
+            "ISheetMetalBendUnfoldParameters",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer",
+            "IPLMObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISplitLine": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISplitLines": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpiral3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IModelCurve3D"
+        ]
+    },
+    "ISpirals3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAuxiliaryGeomContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IVariableTable",
+            "IPropertyKeeper",
+            "IMassInertiaParam",
+            "IUserParameters",
+            "IPart",
+            "IModelContainer",
+            "ISheetMetalContainer",
+            "IEmbodimentsManager",
+            "ISheetMetalBendUnfoldParameters",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer",
+            "IPLMObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISurfaceContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtrusionSurface": {
+        "struct_parent": "IExtrusion",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IShellSurface"
+        ]
+    },
+    "IConicSpiral3D": {
+        "struct_parent": "ISpiral3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICylindricSpiral3D": {
+        "struct_parent": "ISpiral3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionObject": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionObjects": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDrawingContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISymbols2DContainer",
+            "IBuildingContainer"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IInsertionFragment": {
+        "struct_parent": "IInsertionObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionView": {
+        "struct_parent": "IInsertionObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsertionsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IVariableTable",
+            "IKompasDocument2D",
+            "IAutoNumerationManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISheetMetalLinearRuledShell": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ISheetMetalRuledShell"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IViewsAndLayersManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayerGroups": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayerGroup": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPLMObjectEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IKompasDocument3D": {
+        "struct_parent": "IKompasDocument",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ]
+    },
+    "IKompasDocument3DEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelObjectEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPartDocument": {
+        "struct_parent": "IKompasDocument3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAssemblyDocument": {
+        "struct_parent": "IKompasDocument3D",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ILoadCombination",
+            "IDismantleParameters"
+        ]
+    },
+    "IAssociationView": {
+        "struct_parent": "IView",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IEmbodimentsManager",
+            "IAssociationViewElements"
+        ]
+    },
+    "ICopyGeometry": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IEmbodimentsManager",
+            "IPLMObject"
+        ]
+    },
+    "ICopiesGeometry": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IVariableTable",
+            "IPropertyKeeper",
+            "IMassInertiaParam",
+            "IUserParameters",
+            "IPart",
+            "IAuxiliaryGeomContainer",
+            "ISheetMetalContainer",
+            "IEmbodimentsManager",
+            "ISheetMetalBendUnfoldParameters",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer",
+            "IPLMObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IPart": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IModelContainer",
+            "IAuxiliaryGeomContainer",
+            "ISheetMetalContainer",
+            "IEmbodimentsManager",
+            "ISheetMetalBendUnfoldParameters",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer",
+            "IPLMObject"
+        ]
+    },
+    "IParts": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEmbodiment": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IEmbodimentsManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager",
+            "IView",
+            "ICutViewParam",
+            "IBreakViewParam",
+            "IViewDesignation",
+            "IAssociationView",
+            "IAssociationViewElements",
+            "IBilletObsolete",
+            "ICopyGeometry",
+            "IPLMObject",
+            "IVariableTable",
+            "IPropertyKeeper",
+            "IMassInertiaParam",
+            "IUserParameters",
+            "IPart",
+            "IModelContainer",
+            "IAuxiliaryGeomContainer",
+            "ISheetMetalContainer",
+            "ISheetMetalBendUnfoldParameters",
+            "ISourcePartParams",
+            "ISymbols3DContainer",
+            "ISurfaceContainer",
+            "IMeasurementContainer"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMate3DDependentPosition": {
+        "struct_parent": "IMateConstraint3D",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDocument3DManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IToleranceRecalcsManager"
+        ]
+    },
+    "ILayerGroups3D": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILayerGroup3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBuildingAxis": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBuildingAxes": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBuildingContainer": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDrawingContainer",
+            "ISymbols2DContainer"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IMarkNode": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMarkNodes": {
+        "struct_parent": "IKompasCollection",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStraightAxis": {
+        "struct_parent": "IBuildingAxis",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcAxis": {
+        "struct_parent": "IBuildingAxis",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICircleAxis": {
+        "struct_parent": "IBuildingAxis",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMateInterval": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpline3DSmoothingParams": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISystemTemplatesSettings": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "ISaveToPreviousParam",
+            "ILibItemSettings"
+        ]
+    },
+    "IRasterConvertParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IAdditionConvertParameters": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IViewProjection": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IViewProjectionManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceMovement": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceParametersByCurves": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceParametersByFaces": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceTangentParametersByCurveAndFace": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceParametersByCurveAndFace": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IRuledSurfaceParametersByCurveAndDir": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICommonNameObject": {
+        "struct_parent": "ISpecificationObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDraftFromEdges": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IDraftsFromEdges": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConvertToSheetMetal": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConvertsToSheetMetals": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelText": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelTexts": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelTable": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelTables": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicCurve3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicCurves3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtensionCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExtensionCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicSurface": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IConicSurfaces": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInsulateManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": [
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ]
+    },
+    "IPoint3DParamBetweenPoints": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ILineSegmentAndPointDimension": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBilletsObjectsManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ICommonNamesManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IGroupObjectsManager": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IComponentPositioner": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBranchs3D": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMeasurement3D": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IChoiceMaterialDialogParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IOpenGLObject": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IApplicationDialogsUtils": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTreeNode": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTreeEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyTree": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultiSpline3D": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMultiSplines3D": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPropertyParamGrid": {
+        "struct_parent": "IPropertyControl",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBodySurfaceRemover": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBodySurfaceRemovers": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationObjectEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISpecificationDocumentEvents": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IBodyParts": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "ITexturesParam",
+            "IFeature",
+            "IModelObject"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IStraightSlot": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IStraightSlots": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcSlot": {
+        "struct_parent": "IDrawingObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IArcSlots": {
+        "struct_parent": "IDrawingObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IModelsFamilyManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IExternalMeshManager",
+            "IPLMObjectsManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IExternalMeshManager": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IKompasDocument",
+            "IUserMetadataManager",
+            "IStylesManager",
+            "IProductDataManager",
+            "IKompasDocument3D",
+            "IExternalTessellationManager",
+            "IEmbodimentsManager",
+            "IKompasDocument3DEventsResult",
+            "IDynamicCrossSectionsManager",
+            "IInsulateManager",
+            "IPLMObjectsManager",
+            "IModelsFamilyManager"
+        ],
+        "struct_side_interfaces": []
+    },
+    "IExternalMeshObject": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IExternalMeshPrimitive": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISheetSpecification": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IParametrizationParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInertiaProperties": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMassInertiaProperties": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IInertiaPropertiesCalculateParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMassInertiaPropertiesCalculateParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "ISnapSettings": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [
+            "IDocumentSettings",
+            "ILibItemSettings",
+            "IDocument2DSettings",
+            "IAutoSortObjectsParameters"
+        ],
+        "struct_side_interfaces": []
+    },
+    "ISymbolOrSpecSignDialogParam": {
+        "struct_parent": "IKompasAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWrappedCurve": {
+        "struct_parent": "IModelObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IWrappedCurves": {
+        "struct_parent": "IModelObjects",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IMenu": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    },
+    "IPressedKeys": {
+        "struct_parent": "IAPIObject",
+        "being_side_for": [],
+        "struct_side_interfaces": []
+    }
+}
