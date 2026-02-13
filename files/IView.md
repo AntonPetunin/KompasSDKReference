@@ -170,9 +170,7 @@ virtual int32_t GetNumber() = 0;
 
 - `number` (in) — новый номер вида
 
-**Возвращаемое значение:**
-- `SetNumber()`: void
-- `GetNumber()`: текущий номер вида
+**Возвращаемое значение GetNumber:** текущий номер вида.
 
 **Пример использования:**
 
@@ -217,9 +215,7 @@ virtual std::wstring GetName() = 0;
 
 - `name` (in) — новое имя вида
 
-**Возвращаемое значение:**
-- `SetName()`: void
-- `GetName()`: текущее имя вида
+**Возвращаемое значение GetName:** текущее имя вида.
 
 ---
 
@@ -243,9 +239,7 @@ virtual double GetScale() = 0;
 
 - `scale` (in) — масштаб вида (например, 0.5, 1.0, 2.0)
 
-**Возвращаемое значение:**
-- `SetScale()`: void
-- `GetScale()`: текущий масштаб вида
+**Возвращаемое значение GetScale:** текущий масштаб вида.
 
 ---
 
@@ -269,6 +263,8 @@ virtual double GetX() = 0;
 
 - `x` (in) — координата X в миллиметрах
 
+**Возвращаемое значение GetX:** Координата X точки привязки вида в системе координат листа.
+
 ---
 
 ### SetY / GetY
@@ -290,6 +286,9 @@ virtual double GetY() = 0;
 **Параметры:**
 
 - `y` (in) — координата Y в миллиметрах
+
+**Возвращаемое значение GetY:** Координата Y точки привязки вида в системе координат листа.
+
 
 ---
 
@@ -313,6 +312,9 @@ virtual double GetAngle() = 0;
 
 - `angle` (in) — угол поворота в градусах (от -360 до 360)
 
+**Возвращаемое значение GetAngle:** Угол поворота вида относительно листа чертежа в градусах.
+
+
 ---
 
 ### GetViewType
@@ -330,7 +332,7 @@ virtual double GetAngle() = 0;
 virtual LtViewType GetViewType() = 0;
 ```
 
-**Возвращаемое значение:** Тип вида (`LtViewType`)
+**Возвращаемое значение:** Тип вида `LtViewType`
 
 ---
 
@@ -354,6 +356,9 @@ virtual double GetNumerator() = 0;
 
 - `numerator` (in) — числитель масштаба
 
+**Возвращаемое значение GeNumerator():** числителя масштаба вида (double).
+
+
 ---
 
 ### SetCurrent / IsCurrent
@@ -376,9 +381,7 @@ virtual bool IsCurrent() = 0;
 
 - `current` (in) — true = сделать текущим, false = снять признак
 
-**Возвращаемое значение:**
-- `SetCurrent()`: void
-- `IsCurrent()`: true — вид текущий, false — не текущий
+**Возвращаемое значение IsCurrent():** true — вид текущий, false — не текущий.
 
 ---
 
@@ -402,6 +405,8 @@ virtual bool IsBackground() = 0;
 
 - `background` (in) — true = сделать фоновым, false = сделать активным
 
+**Возвращаемое значение IsBackground():** true — вид фоновый, false — не фоновый.
+
 ---
 
 ### SetVisible / IsVisible
@@ -423,6 +428,8 @@ virtual bool IsVisible() = 0;
 **Параметры:**
 
 - `visible` (in) — true = сделать видимым, false = погасить
+
+**Возвращаемое значение IsVisible():** true — вид видимый, false — не видимый.
 
 ---
 
@@ -446,6 +453,8 @@ virtual Color GetColor() = 0;
 
 - `color` (in) — цвет в формате RGB (Color{255, 0, 0} — красный)
 
+**Возвращаемое значение GetColor():** цвет в формате RGB.
+
 ---
 
 ### SetComment / GetComment
@@ -468,6 +477,8 @@ virtual std::wstring GetComment() = 0;
 
 - `comment` (in) — текст комментария
 
+**Возвращаемое значение GetComment():** текст комментария.
+
 ---
 
 ### SetPrintable / IsPrintable
@@ -489,6 +500,8 @@ virtual bool IsPrintable() = 0;
 **Параметры:**
 
 - `printable` (in) — true = печать разрешена, false = печать запрещена
+
+**Возвращаемое значение IsPrintable():** true — печать разрешена, false — запрещена.
 
 ---
 
@@ -634,6 +647,8 @@ virtual IDrawingObjectPtr GetBaseObject() = 0;
 **Параметры:**
 
 - `baseObject` (in) — опорный объект или nullptr для отмены привязки
+
+**Возвращаемое значение GetBaseObject():** указатель [`IDrawingObject`](interface_page_files/IDrawingObject.md).
 
 ---
 
