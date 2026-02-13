@@ -155,15 +155,12 @@ if (newDoc)
 
 ### Группа 4: Управление документами
 
-- [`SetDocumentSynchronize()`](#setdocumentsynchronize) - установить признак синхронизации
-- [`IsDocumentSynchronize()`](#isdocumentsynchronize) - получить признак синхронизации
-- [`IsRecoverMode()`](#isrecovermode) - проверить режим восстановления
-- [`SetRecoverMode()`](#setrecovermode) - установить режим восстановления
-- [`GetRecoverError()`](#getrecovererror) - получить ошибку восстановления
+- [`SetDocumentSynchronize()` / `IsDocumentSynchronize()`](#setdocumentsynchronize--isdocumentsynchronize) - управление синхронизацией с зависимыми документами
+- [`SetRecoverMode()` / `IsRecoverMode()`](#setrecovermode--isrecovermode) - управление режимом восстановления файлов
+- [`GetRecoverError()`](#getrecovererror) - получить код ошибки восстановления
 - [`ClearRecoverError()`](#clearrecovererror) - очистить ошибку восстановления
 - [`GetRecoverModeErrorList()`](#getrecovermodeerrorlist) - получить список исправленных ошибок
-- [`IsLockTemplatesSettings()`](#islocktemplatessettings) - проверить блокировку шаблонов
-- [`SetLockTemplatesSettings()`](#settlocktemplatessettings) - установить блокировку шаблонов
+- [`SetLockTemplatesSettings()` / `IsLockTemplatesSettings()`](#settlocktemplatessettings--islocktemplatessettings) - управление блокировкой шаблонов
 
 ### Группа 5: Дополнительные методы
 
@@ -553,81 +550,49 @@ virtual ILoadCombinationsParamPtr GetLoadCombinationsParam(const std::wstring & 
 
 ### SetDocumentSynchronize() / IsDocumentSynchronize()
 
-[Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
+[Группа методов](#группа-4-управление документами) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Установить режим синхронизации с зависимыми документами.
+**Кратко:** Управление режимом синхронизации с зависимыми документами.
 
 **Полное описание:**
-Метод `SetDocumentSynchronize()` включает или выключает автоматическую синхронизацию с зависимыми документами (например, при изменении вставленной детали в сборке).
+Методы `SetDocumentSynchronize()` и `IsDocumentSynchronize()` предназначены для управления автоматической синхронизацией с зависимыми документами (например, при изменении вставленной детали в сборке). `SetDocumentSynchronize()` включает или выключает режим синхронизации. `IsDocumentSynchronize()` возвращает текущее состояние режима.
 
 **Синтаксис:**
 
 ```cpp
 virtual void SetDocumentSynchronize(bool synchronize) = 0;
-```
-
-**Параметры:**
-
-- `synchronize` (in) - true для включения синхронизации, false для выключения.
-
----
-
-### IsDocumentSynchronize()
-
-[Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Проверить режим синхронизации.
-
-**Полное описание:**
-Метод `IsDocumentSynchronize()` возвращает текущее состояние режима синхронизации с зависимыми документами.
-
-**Синтаксис:**
-
-```cpp
 virtual bool IsDocumentSynchronize() = 0;
 ```
 
-**Возвращаемое значение:** true - синхронизация включена, false - выключена.
+**Параметры SetDocumentSynchronize:**
+
+- `synchronize` (in) - true для включения синхронизации, false для выключения.
+
+**Возвращаемое значение IsDocumentSynchronize:** true - синхронизация включена, false - выключена.
 
 ---
 
-### IsRecoverMode()
+### SetRecoverMode() / IsRecoverMode()
 
-[Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
+[Группа методов](#группа-4-управление документами) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Проверить режим восстановления файлов.
-
-**Полное описание:**
-Метод `IsRecoverMode()` возвращает признак того, что файлы открываются в режиме восстановления (при обнаружении повреждений).
-
-**Синтаксис:**
-
-```cpp
-virtual bool IsRecoverMode() = 0;
-```
-
-**Возвращаемое значение:** true - режим восстановления включен, false - выключен.
-
----
-
-### SetRecoverMode()
-
-[Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Установить режим восстановления файлов.
+**Кратко:** Управление режимом восстановления файлов.
 
 **Полное описание:**
-Метод `SetRecoverMode()` включает или выключает режим восстановления повреждённых файлов. При включённом режиме КОМПАС будет пытаться восстановить повреждённые файлы при открытии.
+Методы `SetRecoverMode()` и `IsRecoverMode()` предназначены для управления режимом восстановления повреждённых файлов. `SetRecoverMode()` включает или выключает режим восстановления. При включённом режиме КОМПАС будет пытаться восстановить повреждённые файлы при открытии. `IsRecoverMode()` возвращает текущее состояние режима.
 
 **Синтаксис:**
 
 ```cpp
 virtual void SetRecoverMode(bool recoveryMode) = 0;
+virtual bool IsRecoverMode() = 0;
 ```
 
-**Параметры:**
+**Параметры SetRecoverMode:**
 
 - `recoveryMode` (in) - true для включения режима восстановления, false для выключения.
+
+**Возвращаемое значение IsRecoverMode:** true - режим восстановления включен, false - выключен.
 
 ---
 
@@ -686,43 +651,27 @@ virtual std::vector<int32_t> GetRecoverModeErrorList() = 0;
 
 ---
 
-### IsLockTemplatesSettings()
+### SetLockTemplatesSettings() / IsLockTemplatesSettings()
 
 [Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
 
-**Кратко:** Проверить блокировку настроек шаблонов.
+**Кратко:** Управление блокировкой настроек шаблонов.
 
 **Полное описание:**
-Метод `IsLockTemplatesSettings()` возвращает признак того, что настройки шаблонов новых документов игнорируются при создании через API.
-
-**Синтаксис:**
-
-```cpp
-virtual bool IsLockTemplatesSettings() = 0;
-```
-
-**Возвращаемое значение:** true - настройки заблокированы, false - используются настройки шаблонов.
-
----
-
-### SetLockTemplatesSettings()
-
-[Группа методов](#группа-4-управление-документами) | [К оглавлению](#методы-интерфейса)
-
-**Кратко:** Установить блокировку настроек шаблонов.
-
-**Полное описание:**
-Метод `SetLockTemplatesSettings()` позволяет заблокировать использование настроек шаблонов новых документов при создании документов через функции API.
+Методы `SetLockTemplatesSettings()` и `IsLockTemplatesSettings()` предназначены для управления использованием настроек шаблонов новых документов при создании через API. `SetLockTemplatesSettings()` позволяет заблокировать использование шаблонов. `IsLockTemplatesSettings()` возвращает текущее состояние блокировки.
 
 **Синтаксис:**
 
 ```cpp
 virtual void SetLockTemplatesSettings(bool lock) = 0;
+virtual bool IsLockTemplatesSettings() = 0;
 ```
 
-**Параметры:**
+**Параметры SetLockTemplatesSettings:**
 
 - `lock` (in) - true для блокировки, false для использования шаблонов.
+
+**Возвращаемое значение IsLockTemplatesSettings:** true - настройки заблокированы, false - используются настройки шаблонов.
 
 ---
 
