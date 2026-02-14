@@ -69,7 +69,7 @@
 
 1. **Проверка возвращаемых указателей** — методы `Add()` и `GetLineSegment()` могут возвращать nullptr при ошибках. Всегда проверяйте указатель перед использованием.
 
-3. **Индексация** — отрезки в коллекции нумеруются с нуля. При получении по индексу убедитесь, что индекс находится в допустимом диапазоне [0, GetCount()-1].
+2. **Индексация** — отрезки в коллекции нумеруются с нуля. При получении по индексу убедитесь, что индекс находится в допустимом диапазоне [0, GetCount()-1].
 
 ## Получение интерфейса
 
@@ -78,8 +78,7 @@
 
 ## Дополнительные интерфейсы
 
-- `IKompasCollection` - базовый интерфейс коллекции (GetCount, методы работы с элементами)
-- `ILineSegment` - интерфейс отрезка в коллекции
+Интерфейс не имеет дополнительных интерфейсов, получаемых через QueryInterface.
 
 ## Методы интерфейса
 
@@ -141,7 +140,7 @@ for (int32_t i = 0; i < count; ++i)
         double x2 = line->GetX2();
         double y2 = line->GetY2();
         double length = line->GetLength();
-        
+
         // Обработка отрезка
     }
 }
@@ -293,11 +292,11 @@ void CreateFrame(ksapi::IDrawingContainerPtr drawingContainer, double width, dou
 {
     if (!drawingContainer)
         return;
-    
+
     ksapi::ILineSegmentsPtr lines = drawingContainer->GetLineSegments();
     if (!lines)
         return;
-    
+
     // Левая сторона
     ksapi::ILineSegmentPtr left = lines->Add();
     if (left)
@@ -309,7 +308,7 @@ void CreateFrame(ksapi::IDrawingContainerPtr drawingContainer, double width, dou
         left->SetStyle(ksCSNormal);
         left->Update();
     }
-    
+
     // Правая сторона
     ksapi::ILineSegmentPtr right = lines->Add();
     if (right)
@@ -321,7 +320,7 @@ void CreateFrame(ksapi::IDrawingContainerPtr drawingContainer, double width, dou
         right->SetStyle(ksCSNormal);
         right->Update();
     }
-    
+
     // Верхняя сторона
     ksapi::ILineSegmentPtr top = lines->Add();
     if (top)
@@ -333,7 +332,7 @@ void CreateFrame(ksapi::IDrawingContainerPtr drawingContainer, double width, dou
         top->SetStyle(ksCSNormal);
         top->Update();
     }
-    
+
     // Нижняя сторона
     ksapi::ILineSegmentPtr bottom = lines->Add();
     if (bottom)
@@ -357,14 +356,14 @@ void CreateHorizontalGrid(ksapi::IDrawingContainerPtr drawingContainer,
 {
     if (!drawingContainer)
         return;
-    
+
     ksapi::ILineSegmentsPtr lines = drawingContainer->GetLineSegments();
     if (!lines)
         return;
-    
+
     double x1 = 0;
     double x2 = 200;  // Ширина сетки
-    
+
     for (double y = startY; y <= endY; y += step)
     {
         ksapi::ILineSegmentPtr line = lines->Add();
@@ -388,4 +387,3 @@ void CreateHorizontalGrid(ksapi::IDrawingContainerPtr drawingContainer,
 - [ILineSegment](interface_page_files/ILineSegment.md) - интерфейс отрезка
 - [IDrawingContainer](interface_page_files/IDrawingContainer.md) - графический контейнер
 - [IKompasCollection](interface_page_files/IKompasCollection.md) - базовый интерфейс коллекции
-

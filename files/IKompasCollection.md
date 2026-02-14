@@ -60,6 +60,7 @@
 Базовый интерфейс для работы с коллекциями объектов в КОМПАС API. Предоставляет унифицированный способ доступа к группам объектов различных типов: документам, слоям, видам, объектам чертежа, моделям и другим коллекциям.
 
 **Основные характеристики:**
+
 - Наследуется от [`IKompasAPIObject`](interface_page_files/IKompasAPIObject.md)
 - Является базовым для более чем 30 специализированных интерфейсов коллекций
 - Поддерживает итерацию по объектам и получение количества элементов
@@ -77,7 +78,7 @@
 1. **Получение наследника интерфейса:**
    - [`IDrawingContainer::GetCircles()`](interface_page_files/ICircles.md) - коллекция окружностей вида
 
-3. **Через QueryInterface:**
+2. **Через QueryInterface:**
    - Приведение от специализированных коллекций к базовому `IKompasCollection`
 
 ### Примеры получения:
@@ -106,25 +107,28 @@ auto objects = groups->GetObjects();
 Интерфейс `IKompasCollection` является базовым. Ниже перечислены примеры интерфейсов, которые **наследуются** от него:
 
 ### Коллекции документов и библиотек:
+
 - **`IDocuments`** - коллекция открытых документов
 - **`IInsertsLibraries`** - коллекция библиотек вставок
 
 ### Коллекции чертежа (2D):
+
 - **`ILayoutSheets`** - листы оформления
 - **`IDrawingObjects`** - объекты чертежа
 - **`ILayers`** - слои
 - **`ILocalCoordinateSystems2D`** - локальные системы координат
 
 ### Коллекции модели (3D):
+
 - **`IModelObjects`** - объекты модели
 - **`ILayers3D`** - слои 3D
 - **`ILayerGroups3D`** - группы слоев 3D
 - **`IManipulators`** - манипуляторы
 
 ### Коллекции спецификации:
+
 - **`ISpecificationDescriptions`** - описания спецификации
 - **`ISpecificationBaseObjects`** - базовые объекты спецификации
-
 
 ## Методы интерфейса
 
@@ -323,9 +327,9 @@ for (ksapi::IKompasDocument2DPtr document : documents->GetObjects())
         continue;
 
     document->SetActive();
-    
+
     ksapi::IDrawingContainerPtr drawingContainer = GetDrawingContainer(*document);
-    
+
     switch (++i)
     {
         case 1: // В первом документе отрезок
@@ -359,7 +363,7 @@ if (!namedGroups)
     return;
 ShowObjectsToUser(document, namedGroups->GetObjects(), L"группы");
 
-kompasApp->ShowMessageBox(std::format(L"count = {}", namedGroups->GetCount()), 
+kompasApp->ShowMessageBox(std::format(L"count = {}", namedGroups->GetCount()),
                           L"", ksMessageWarning, ksButtonSetOk, true);
 ```
 
@@ -404,7 +408,7 @@ for (int32_t i = 0; i < sheets->GetCount(); i++)
     ksapi::ILayoutSheetPtr sheet = sheets->GetLayoutSheet(i);
     if (!sheet)
         continue;
-    
+
     if (sheet->GetName() == L"Чертеж1")
     {
         // Найден нужный лист
@@ -412,5 +416,3 @@ for (int32_t i = 0; i < sheets->GetCount(); i++)
     }
 }
 ```
-
-

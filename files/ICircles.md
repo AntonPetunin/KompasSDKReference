@@ -75,7 +75,6 @@
 
 3. **Контекст создания**: Окружности создаются в контексте конкретного вида [`IView`](interface_page_files/IView.md). Убедитесь, что работа ведется с нужным видом документа.
 
-
 ## Получение интерфейса
 
 ### Основные способы получения:
@@ -103,7 +102,7 @@ if (ksapi::IViewsAndLayersManagerPtr viewsMngr = doc2D->GetViewsAndLayersManager
 
 ## Дополнительные интерфейсы
 
-Интерфейс `ICircles` не является дополнительным интерфейсом и должен получаться напрямую через соответствующие методы контейнеров.
+Интерфейс `ICircles` не имеет дополнительных интерфейсов и должен получаться напрямую через соответствующие методы контейнеров.
 
 ## Методы интерфейса
 
@@ -154,7 +153,7 @@ void ProcessAllCircles(ksapi::ICirclesPtr circles)
             double xc = circle->GetXc();
             double yc = circle->GetYc();
             double radius = circle->GetRadius();
-            
+
             // Вывод информации в лог или отладочное сообщение
             std::cout << "Окружность: центр(" << xc << ", " << yc << "), радиус " << radius << " мм";;
         }
@@ -205,23 +204,23 @@ if (circle)
 
 ```cpp
 // Функция создания окружности с проверками
-ksapi::ICirclePtr CreateCircle(ksapi::ICirclesPtr circles, 
+ksapi::ICirclePtr CreateCircle(ksapi::ICirclesPtr circles,
                                 double xc, double yc, double r)
 {
     // Проверка валидности коллекции
     if (!circles)
         return nullptr;
-    
+
     // Создание окружности
     ksapi::ICirclePtr circle = circles->Add();
     if (!circle)
         return nullptr;
-    
+
     // Установка параметров
     circle->SetXc(xc);
     circle->SetYc(yc);
     circle->SetRadius(r);
-    
+
     return circle;
 }
 
@@ -232,7 +231,7 @@ void CreateSampleCircles(ksapi::ICirclesPtr circles)
     CreateCircle(circles, 100.0, 100.0, 30.0);
     CreateCircle(circles, 100.0, 100.0, 50.0);
     CreateCircle(circles, 100.0, 100.0, 70.0);
-    
+
     // Создание окружностей в разных позициях
     CreateCircle(circles, 200.0, 150.0, 25.0);
     CreateCircle(circles, 250.0, 200.0, 40.0);
@@ -243,31 +242,31 @@ void CreateSampleCircles(ksapi::ICirclesPtr circles)
 
 ```cpp
 // Полный пример создания окружности с контекстом документа
-ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainerPtr drawingContainer, 
+ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainerPtr drawingContainer,
                                  double xc, double yc, double r)
 {
     // Проверка валидности контейнера
     if (!drawingContainer)
         return nullptr;
-        
+
     // Получение коллекции окружностей
     ksapi::ICirclesPtr circles = drawingContainer->GetCircles();
     if (!circles)
         return nullptr;
-        
+
     // Создание новой окружности
     ksapi::ICirclePtr circle = circles->Add();
     if (!circle)
         return nullptr;
-    
+
     // Установка параметров окружности
     circle->SetXc(xc);
     circle->SetYc(yc);
     circle->SetRadius(r);
-    
+
     // Применение изменений
     circle->Update();
-    
+
     return circle;
 }
 
@@ -305,7 +304,7 @@ void DrawCirclesExample()
 // НЕПРАВИЛЬНО - возможен nullptr
 ksapi::ICirclesPtr circles = container->GetCircles();
 ksapi::ICirclePtr circle = circles->Add();  // circles может быть nullptr
-circle->SetXc(100);  
+circle->SetXc(100);
 
 // ПРАВИЛЬНО - проверка на каждом этапе
 ksapi::ICirclesPtr circles = container->GetCircles();
@@ -345,24 +344,24 @@ for (int32_t i = 0; i < count; i++)  // i < count, а не i <= count
 
 ```cpp
 // Универсальная функция создания окружности с проверками
-ksapi::ICirclePtr SafeCreateCircle(ksapi::IDrawingContainerPtr container, 
+ksapi::ICirclePtr SafeCreateCircle(ksapi::IDrawingContainerPtr container,
                                      double xc, double yc, double r)
 {
     auto circles = container->GetCircles();
     if (!circles)
         return nullptr;
-    
+
     auto circle = circles->Add();
     if (!circle)
         return nullptr;
-    
+
     circle->SetXc(xc);
     circle->SetYc(yc);
     circle->SetRadius(r);
-    
+
     if (!circle->Update())
         return nullptr;
-    
+
     return circle;
 }
 ```
@@ -378,17 +377,17 @@ ksapi::ICirclePtr CreateStyledCircle(ksapi::ICirclesPtr circles,
     ksapi::ICirclePtr circle = circles->Add();
     if (!circle)
         return nullptr;
-    
+
     circle->SetXc(xc);
     circle->SetYc(yc);
     circle->SetRadius(r);
-    
+
     // Установка стиля через дополнительный интерфейс
     if (ksapi::ICurveStylePtr curveStyle = circle)
     {
         curveStyle->SetStyle(style);
     }
-    
+
     circle->Update();
     return circle;
 }
@@ -398,7 +397,7 @@ ksapi::ICirclePtr CreateStyledCircle(ksapi::ICirclesPtr circles,
 
 ```cpp
 // Поиск окружности с заданным радиусом
-ksapi::ICirclePtr FindCircleByRadius(ksapi::ICirclesPtr circles, 
+ksapi::ICirclePtr FindCircleByRadius(ksapi::ICirclesPtr circles,
                                      double targetRadius)
 {
     int32_t count = circles->GetCount();

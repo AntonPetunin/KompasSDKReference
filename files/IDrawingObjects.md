@@ -65,6 +65,7 @@
 Интерфейс `IDrawingObjects` наследует функциональность от [`IKompasCollection`](interface_page_files/IKompasCollection.md) и добавляет специфичные методы для работы с графическими объектами чертежа. От этого интерфейса наследуются специализированные коллекции, такие как `ILines`, `ICircles`, `IArcs`, `IPoints`, `IHatches`, `IMarks` и другие.
 
 **Основные характеристики:**
+
 - Базовый интерфейс для всех коллекций графических объектов 2D документов.
 - Предоставляет доступ к объектам по индексу и по имени.
 
@@ -112,7 +113,7 @@ if (!circles)
 
 ## Дополнительные интерфейсы
 
-Интерфейс `IDrawingObjects` сам является базовым, поэтому дополнительные интерфейсы получаются от **объектов**, содержащихся в коллекции (через `GetItem()`).
+Интерфейс не имеет дополнительных интерфейсов, получаемых через QueryInterface.
 
 ## Методы интерфейса
 
@@ -313,22 +314,22 @@ if (count > 0)
 
 ```cpp
 // Создать линию по двум точкам и вернуть математическую кривую для неё.
-ksapi::ICurve2DPtr CreateLine(ksapi::IDrawingContainer & drawingContainer, 
+ksapi::ICurve2DPtr CreateLine(ksapi::IDrawingContainer & drawingContainer,
                                double x1, double y1, double x2, double y2)
 {
   ksapi::ILinesPtr lines = drawingContainer.GetLines();
   if (!lines)
     return nullptr;
-    
+
   ksapi::ILinePtr line = lines->Add();
   if (!line)
     return nullptr;
-    
+
   line->SetX1(x1);
   line->SetY1(y1);
   line->SetX2(x2);
   line->SetY2(y2);
-  
+
   line->Update();  // ВАЖНО: обязательный вызов!
 
   return line->GetCurve2D();
@@ -339,14 +340,14 @@ ksapi::ICurve2DPtr CreateLine(ksapi::IDrawingContainer & drawingContainer,
 
 ```cpp
 // Создать окружность по координатам центра и радиусу.
-ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainer & drawingContainer, 
+ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainer & drawingContainer,
                                 double xc, double yc, double r,
                                 ksCurveStyleEnum style)
 {
   ksapi::ICirclesPtr circlesContainer = drawingContainer.GetCircles();
   if (!circlesContainer)
     return nullptr;
-    
+
   ksapi::ICirclePtr circle = circlesContainer->Add();
   if (!circle)
     return nullptr;
@@ -355,7 +356,7 @@ ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainer & drawingContainer,
   circle->SetYc(yc);
   circle->SetRadius(r);
   circle->SetStyle(style);
-  
+
   circle->Update();  // ВАЖНО!
 
   return circle;
@@ -366,14 +367,14 @@ ksapi::ICirclePtr CreateCircle(ksapi::IDrawingContainer & drawingContainer,
 
 ```cpp
 // Создать дугу по центру, радиусу, точкам начала и конца и направлению.
-ksapi::ICurve2DPtr CreateArc(ksapi::IDrawingContainer & drawingContainer, 
-                              double xc, double yc, double r, 
+ksapi::ICurve2DPtr CreateArc(ksapi::IDrawingContainer & drawingContainer,
+                              double xc, double yc, double r,
                               double x1, double y1, double x2, double y2, bool dir)
 {
   ksapi::IArcsPtr arcsContainer = drawingContainer.GetArcs();
   if (!arcsContainer)
     return nullptr;
-    
+
   ksapi::IArcPtr arc = arcsContainer->Add();
   if (!arc)
     return nullptr;
@@ -386,7 +387,7 @@ ksapi::ICurve2DPtr CreateArc(ksapi::IDrawingContainer & drawingContainer,
   arc->SetX2(x2);
   arc->SetY2(y2);
   arc->SetDirection(dir);
-  
+
   arc->Update();  // ВАЖНО!
 
   return arc->GetCurve2D();
@@ -407,18 +408,18 @@ ObjectPtr CreateDrawingObject(CollectionPtr& collection)
     // 1. Проверка валидности коллекции
     if (!collection)
         return nullptr;
-        
+
     // 2. Создание нового объекта
     ObjectPtr obj = collection->Add();
     if (!obj)
         return nullptr;
-        
+
     // 3. Настройка параметров объекта (устанавливаются в конкретной реализации)
     // obj->SetXXX(...);
-    
+
     // 4. ВАЖНО: Вызов Update для отображения объекта
     obj->Update();
-    
+
     return obj;
 }
 ```
@@ -431,15 +432,15 @@ void ProcessDrawingObjects(ksapi::IDrawingObjectsPtr objects)
 {
     if (!objects)
         return;
-        
+
     int32_t count = objects->GetCount();
-    
+
     for (int32_t i = 0; i < count; ++i)
     {
         ksapi::IDrawingObjectPtr obj = objects->GetItem(i);
         if (!obj)
             continue;
-            
+
         // Обработка объекта
         // obj->GetXXX();
     }
@@ -450,12 +451,12 @@ void ProcessDrawingObjects(ksapi::IDrawingObjectsPtr objects)
 
 ```cpp
 // Шаблон для безопасного поиска объекта по имени
-ksapi::IDrawingObjectPtr FindByName(ksapi::IDrawingObjectsPtr objects, 
+ksapi::IDrawingObjectPtr FindByName(ksapi::IDrawingObjectsPtr objects,
                                      const std::wstring& name)
 {
     if (!objects || name.empty())
         return nullptr;
-        
+
     return objects->GetItemByName(name);
 }
 ```

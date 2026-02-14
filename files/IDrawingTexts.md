@@ -91,9 +91,7 @@
 
 ## Дополнительные интерфейсы
 
-От интерфейса `IDrawingTexts` и его методов можно получить следующие дополнительные интерфейсы:
-
-- **`IDrawingText`** - текстовый объект на чертеже
+Интерфейс не имеет дополнительных интерфейсов, получаемых через QueryInterface.
 
 ## Методы интерфейса
 
@@ -445,8 +443,8 @@ if (count > 0)
 
 ```cpp
 // Создание текста с привязкой к аннотациям
-void CreateText(ksapi::IDrawingTextsPtr & textsCollection, 
-                ksapi::IAnnotativeContainerPtr & annContainer, 
+void CreateText(ksapi::IDrawingTextsPtr & textsCollection,
+                ksapi::IAnnotativeContainerPtr & annContainer,
                 double x, double y, const std::wstring & str)
 {
   if (!textsCollection)
@@ -486,7 +484,7 @@ void CreateText(ksapi::IDrawingContainerPtr drawingContainer)
   ksapi::IDrawingTextsPtr texts = drawingContainer->GetDrawingTexts();
   if (!texts)
     return;
-    
+
   ksapi::IDrawingTextPtr drawingText = texts->Add();
   ksapi::ITextPtr text = drawingText;
   if (!text)
@@ -513,7 +511,7 @@ void CreateText(ksapi::IDrawingContainerPtr drawingContainer)
     return;
 
   item->SetStr(L"Текст на чертеже");
-  
+
   drawingText->Update();
 }
 ```
@@ -526,23 +524,23 @@ void CreateText(ksapi::IDrawingContainerPtr drawingContainer)
 
 ```cpp
 // Универсальный шаблон для создания текста
-ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts, 
-                                  double x, double y, 
+ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts,
+                                  double x, double y,
                                   const std::wstring& content)
 {
     if (!texts)
         return nullptr;
-        
+
     ksapi::IDrawingTextPtr drawingText = texts->Add();
     if (!drawingText)
         return nullptr;
-        
+
     // Установка параметров
     drawingText->SetX(x);
     drawingText->SetY(y);
     drawingText->SetHeight(10);
     drawingText->SetWidth(10);
-    
+
     // Установка содержимого
     ksapi::ITextPtr text = drawingText;
     if (text)
@@ -555,7 +553,7 @@ ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts,
                 item->SetStr(content);
         }
     }
-    
+
     drawingText->Update();
     return drawingText;
 }
@@ -565,12 +563,12 @@ ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts,
 
 ```cpp
 // Поиск и обновление текстовой метки
-bool UpdateTextMark(ksapi::IDrawingTextsPtr& texts, 
+bool UpdateTextMark(ksapi::IDrawingTextsPtr& texts,
                    ksapi::IDrawingObjectPtr obj)
 {
     if (!texts || !obj)
         return false;
-        
+
     // Пытаемся найти существующую метку
     ksapi::IDrawingTextPtr mark = texts->FindTextMark(obj);
     if (mark)
@@ -579,12 +577,12 @@ bool UpdateTextMark(ksapi::IDrawingTextsPtr& texts,
         mark->Update();
         return true;
     }
-    
+
     // Метка не найдена, создаем новую
     mark = texts->AddTextMark(obj);
     if (!mark)
         return false;
-        
+
     mark->Update();
     return true;
 }

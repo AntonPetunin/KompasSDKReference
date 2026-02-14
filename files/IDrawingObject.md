@@ -87,8 +87,6 @@
 3. **Из контейнера чертежа:**
    - [`IDrawingContainer::GetObjects()`](interface_page_files/IDrawingContainer.md#getobjects) - получение всех объектов с фильтрацией по типам
 
-
-
 ### Примеры получения:
 
 ```cpp
@@ -108,14 +106,7 @@ std::vector<ksapi::IDrawingObjectPtr> objects = drawingContainer->GetObjects(typ
 
 ## Дополнительные интерфейсы
 
-Интерфейс `IDrawingObject` является базовым для многих конкретных типов объектов. Через `QueryInterface` можно получить доступ, например, к таким специализированным интерфейсам:
-
-- **IHatch** - интерфейс штриховки
-- **ILineSegment** - интерфейс отрезка
-- **IArc** - интерфейс дуги
-- **ICircle** - интерфейс окружности
-- **IView** - интерфейс вида
-- **ILayer** - интерфейс слоя
+Интерфейс `IDrawingObject` является базовым для многих конкретных типов объектов, но не имеет дополнительных интерфейсов, получаемых через QueryInterface.
 
 ## Методы интерфейса
 
@@ -182,6 +173,7 @@ virtual DrawingObjectTypeEnum GetDrawingObjectType() = 0;
 **Параметры:** Метод не имеет параметров.
 
 **Возвращаемое значение:** Значение перечисления `DrawingObjectTypeEnum`, например:
+
 - `ksDrLineSegment` - отрезок
 - `ksDrArc` - дуга
 - `ksDrCircle` - окружность
@@ -216,7 +208,7 @@ std::vector<ksapi::IDrawingObjectPtr> objects = drawingContainer->GetObjects({ks
 for (const auto& obj : objects)
 {
     ksapi::DrawingObjectTypeEnum type = obj->GetDrawingObjectType();
-    
+
     switch (type)
     {
         case ksapi::DrawingObjectTypeEnum::ksDrLineSegment:
@@ -399,7 +391,7 @@ for (const auto& obj : drawingObjects)
 
 if (!invalidObjects.empty())
 {
-    kompasApp->ShowMessageBox(L"Предупреждение", 
+    kompasApp->ShowMessageBox(L"Предупреждение",
                               L"Обнаружено некорректных объектов: " + std::to_wstring(invalidObjects.size()),
                               ksapi::ksMessageWarning, ksapi::ksButtonSetOk, true);
 }
@@ -419,6 +411,7 @@ if (!invalidObjects.empty())
 **Кратко:** Применяет изменения параметров объекта и проверяет его корректность.
 
 **Полное описание:** Метод является критически важным для работы с объектами. После изменения любых свойств объекта (координат, стиля, слоя и т.д.) необходимо вызвать `Update()`, чтобы:
+
 1. Пересчитать внутренние данные объекта
 2. Проверить корректность всех параметров
 3. Обновить отображение в документе
@@ -466,14 +459,14 @@ for (int i = 0; i < 10; i++)
     line->SetX2(i * 10 + 5);
     line->SetY2(50);
     line->SetStyle(1);
-    
+
     if (line->Update())
     {
         createdObjects.push_back(line);
     }
     else
     {
-        kompasApp->ShowMessageBox(L"Ошибка", 
+        kompasApp->ShowMessageBox(L"Ошибка",
                                   L"Не удалось создать отрезок " + std::to_wstring(i),
                                   ksapi::ksMessageError, ksapi::ksButtonSetOk, true);
     }
@@ -537,8 +530,8 @@ for (const auto& obj : objectsToDelete)
     if (!obj->Delete())
     {
         // Логирование ошибки
-        kompasApp->ShowMessageBox(L"Ошибка удаления", 
-                                  L"Не удалось удалить объект типа " + 
+        kompasApp->ShowMessageBox(L"Ошибка удаления",
+                                  L"Не удалось удалить объект типа " +
                                   std::to_wstring(static_cast<int>(obj->GetDrawingObjectType())),
                                   ksapi::ksMessageError, ksapi::ksButtonSetOk, true);
     }
@@ -595,8 +588,8 @@ if (it != objectMap.end())
 void PrintObjectInfo(ksapi::IDrawingObjectPtr obj)
 {
     int64_t id = obj->GetId();
-    kompasApp->ShowMessageBox(L"ID", 
-                            L"Не удалось удалить объект типа " + 
+    kompasApp->ShowMessageBox(L"ID",
+                            L"Не удалось удалить объект типа " +
                             std::to_wstring(static_cast<int>(id)),
                             ksapi::ksMessageInformation, ksapi::ksButtonSetOk, true);
 }
@@ -679,7 +672,7 @@ virtual void SetStyle(int32_t style) = 0;
 int32_t currentStyle = obj->GetStyle();
 
 // Установка стиля линии
-obj->SetStyle(2);  
+obj->SetStyle(2);
 obj->Update();
 ```
 
@@ -687,7 +680,7 @@ obj->Update();
 
 ```cpp
 // Изменение стиля объекта
-int32_t newStyle = 2; 
+int32_t newStyle = 2;
 obj->SetStyle(newStyle);
 if (obj->Update())
 {
@@ -982,7 +975,7 @@ while (ksapi::IDrawingObjectPtr selected = SelectObject(document))
                                   ksapi::ksMessageWarning, ksapi::ksButtonSetOk, true);
         continue;
     }
-    
+
     // Добавление кривой в массив границ штриховки
     boundaries.push_back(selected);
 }
@@ -1240,11 +1233,11 @@ if (curve1 && curve2)
 {
     // Получение точек пересечения
     std::vector<double> intersectionPoints = curve1->Intersect(curve2);
-    
+
     // Вывод точек пересечения
     for (size_t i = 0; i < intersectionPoints.size(); i += 2)
     {
-        std::wcout << L"Точка пересечения: (" << intersectionPoints[i] << L", " 
+        std::wcout << L"Точка пересечения: (" << intersectionPoints[i] << L", "
                     << intersectionPoints[i+1] << L")" << std::endl;
     }
 }
@@ -1365,7 +1358,7 @@ ksapi::IDrawingObjectPtr SelectObject(ksapi::IKompasDocument2D & document)
     ksapi::IProcessPtr process = process2d;
     if (!process)
         return nullptr;
-    
+
     ksapi::IViewPtr currentView = document.GetViewsAndLayersManager()->GetViews()->GetActiveView();
     if (!currentView)
         return nullptr;
@@ -1403,6 +1396,7 @@ ksapi::IDrawingObjectPtr SelectObject(ksapi::IKompasDocument2D & document)
 ```
 
 **Пояснения:**
+
 - Используется процесс выбора курсора для интерактивного указания объекта
 - Колбэк вызывается при каждом клике мыши в документе
 - `FindObject()` ищет объект в указанных координатах
@@ -1417,7 +1411,7 @@ ksapi::IDrawingObjectPtr SelectObject(ksapi::IKompasDocument2D & document)
 void AnalyzeDrawingObjects(ksapi::IDrawingContainerPtr drawingContainer)
 {
     // Получаем все объекты
-    std::vector<ksapi::IDrawingObjectPtr> objects = 
+    std::vector<ksapi::IDrawingObjectPtr> objects =
         drawingContainer->GetObjects({ksapi::DrawingObjectTypeEnum::ksAllObj});
 
     // Статистика по типам объектов
@@ -1432,7 +1426,7 @@ void AnalyzeDrawingObjects(ksapi::IDrawingContainerPtr drawingContainer)
         // Проверяем валидность
         if (!obj->IsValid())
         {
-            kompasApp->ShowMessageBox(L"Предупреждение", 
+            kompasApp->ShowMessageBox(L"Предупреждение",
                                       L"Обнаружен невалидный объект",
                                       ksapi::ksMessageWarning, ksapi::ksButtonSetOk, true);
             continue;
@@ -1451,6 +1445,7 @@ void AnalyzeDrawingObjects(ksapi::IDrawingContainerPtr drawingContainer)
 ```
 
 **Пояснения:**
+
 - Используем `ksAllObj` для получения всех типов объектов
 - Проверяем `IsTemp()` для фильтрации временных объектов
 - Всегда проверяем `IsValid()` перед работой с объектами
@@ -1493,6 +1488,7 @@ void FindIntersections(ksapi::IDrawingObjectPtr obj1, ksapi::IDrawingObjectPtr o
 ```
 
 **Пояснения:**
+
 - Не все объекты являются кривыми - проверяем возвращаемый указатель
 - `Intersect()` возвращает массив координат [x1, y1, x2, y2, ...]
 - Для работы с геометрией используем интерфейс ICurve2D
@@ -1507,15 +1503,15 @@ ksapi::IDrawingObjectPtr ExecuteFindObjectProcess(int32_t command, ksCursorEnum 
 {
     // ... процесс выбора объекта ...
     ksapi::IDrawingObjectPtr baseObj;
-    
+
     // Запустить процесс указания объекта
     if (baseObj = ExecuteFindObjectProcess(...))
     {
         // Получить тип объекта
         auto type = baseObj->GetDrawingObjectType();
-        
+
         // Проверка типа - отрезок
-        if (type == DrawingObjectTypeEnum::ksDrLineSeg || 
+        if (type == DrawingObjectTypeEnum::ksDrLineSeg ||
             type == DrawingObjectTypeEnum::ksDrPolyline)
         {
             // Работа с отрезком или полилинией
@@ -1536,6 +1532,7 @@ ksapi::IDrawingObjectPtr ExecuteFindObjectProcess(int32_t command, ksCursorEnum 
 ```
 
 **Пояснения:**
+
 - Всегда используйте `GetDrawingObjectType()` для определения типа перед приведением
 - Перечисление `DrawingObjectTypeEnum` содержит все возможные типы объектов
 - После определения типа безопасно приводите к конкретному интерфейсу
@@ -1553,7 +1550,7 @@ void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
     {
         for (const auto& obj : objects)
         {
-            std::wcout << L"Создан объект типа: " 
+            std::wcout << L"Создан объект типа: "
                         << static_cast<int>(obj->GetDrawingObjectType()) << std::endl;
         }
         return true;
@@ -1582,7 +1579,7 @@ void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
         }
         return true;
     });
-    
+
     // Начало перемещения
     events->AddBeginMoveHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
     {
@@ -1594,7 +1591,7 @@ void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
         }
         return true;
     });
-    
+
     // Окончание перемещения
     events->AddMoveHandler([this](const std::vector<ksapi::IDrawingObjectPtr>& objects)
     {
@@ -1614,6 +1611,7 @@ void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
 ```
 
 **Пояснения:**
+
 - События позволяют отслеживать все изменения объектов в реальном времени
 - `AddCreateObjectHandler` - вызывается после создания объекта
 - `AddUpdateObjectHandler` - вызывается после редактирования
@@ -1630,22 +1628,22 @@ void SubscribeToDrawingObjectEvents(ksapi::IDrawingObjectEventsPtr events)
 void MoveObjectsToLayers(ksapi::IDrawingContainerPtr drawingContainer)
 {
     // Получаем все объекты
-    std::vector<ksapi::IDrawingObjectPtr> objects = 
+    std::vector<ksapi::IDrawingObjectPtr> objects =
         drawingContainer->GetObjects({ksapi::DrawingObjectTypeEnum::ksAllObj});
 
     // Распределяем объекты по слоям (циклически)
     for (size_t i = 0; i < objects.size(); i++)
     {
         ksapi::IDrawingObjectPtr obj = objects[i];
-        
+
         // Пропускаем временные объекты
         if (obj->IsTemp())
             continue;
-            
+
         // Устанавливаем номер слоя (0, 1, 2, ...)
         int32_t layerNumber = static_cast<int32_t>(i % 3);  // 3 слоя
         obj->SetLayerNumber(layerNumber);
-        
+
         // Обязательно вызываем Update() после изменения
         if (!obj->Update())
         {
@@ -1656,13 +1654,13 @@ void MoveObjectsToLayers(ksapi::IDrawingContainerPtr drawingContainer)
 
 // Получение всех объектов определенного слоя
 std::vector<ksapi::IDrawingObjectPtr> GetObjectsOnLayer(
-    ksapi::IDrawingContainerPtr drawingContainer, 
+    ksapi::IDrawingContainerPtr drawingContainer,
     int32_t layerNumber)
 {
     std::vector<ksapi::IDrawingObjectPtr> result;
-    std::vector<ksapi::IDrawingObjectPtr> allObjects = 
+    std::vector<ksapi::IDrawingObjectPtr> allObjects =
         drawingContainer->GetObjects({ksapi::DrawingObjectTypeEnum::ksAllObj});
-    
+
     for (const auto& obj : allObjects)
     {
         if (obj->GetLayerNumber() == layerNumber && !obj->IsTemp())
@@ -1670,12 +1668,13 @@ std::vector<ksapi::IDrawingObjectPtr> GetObjectsOnLayer(
             result.push_back(obj);
         }
     }
-    
+
     return result;
 }
 ```
 
 **Пояснения:**
+
 - `SetLayerNumber()` перемещает объект на указанный слой
 - После изменения любых параметров объекта всегда вызывайте `Update()`
 - Проверяйте возвращаемое значение `Update()` для обработки ошибок
@@ -1723,7 +1722,7 @@ auto line = CreateAndSetupObject<ksapi::ILineSegment>([&]()
 ```cpp
 // Шаблон безопасного приведения к конкретному типу
 template<typename T>
-std::shared_ptr<T> GetTypedObject(ksapi::IDrawingObjectPtr obj, 
+std::shared_ptr<T> GetTypedObject(ksapi::IDrawingObjectPtr obj,
                                    ksapi::DrawingObjectTypeEnum expectedType)
 {
     if (!obj)
@@ -1737,7 +1736,7 @@ std::shared_ptr<T> GetTypedObject(ksapi::IDrawingObjectPtr obj,
 }
 
 // Использование
-auto line = GetTypedObject<ksapi::ILineSegment>(obj, 
+auto line = GetTypedObject<ksapi::ILineSegment>(obj,
                                                 ksapi::DrawingObjectTypeEnum::ksDrLineSegment);
 if (line)
 {
@@ -1766,8 +1765,8 @@ std::vector<ksapi::IDrawingObjectPtr> FilterObjects(
 // Использование
 auto validGeometryObjects = FilterObjects(allObjects, [](auto obj)
 {
-    return !obj->IsTemp() && 
-           obj->IsValid() && 
+    return !obj->IsTemp() &&
+           obj->IsValid() &&
            obj->IsGeometryObject();
 });
 ```

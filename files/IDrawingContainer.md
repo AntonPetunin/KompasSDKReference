@@ -86,7 +86,8 @@ ksapi::IDrawingContainerPtr container = activeView;  // IView приводитс
 
 ## Дополнительные интерфейсы
 
-Интерфейс IDrawingContainer не является дополнительным интерфейсом - это основной интерфейс для доступа к графическим объектам. Однако через него можно получить доступ к другим коллекциям графических объектов.
+Интерфейс IDrawingContainer является дополнительным интерфейсом для `IView`, `IViewEx`.
+Это основной интерфейс для доступа к графическим объектам. Однако через него можно получить доступ к другим коллекциям графических объектов.
 
 ## Методы интерфейса
 
@@ -234,6 +235,7 @@ if (ksapi::IArcPtr arc = arcs->Add())
 ```
 
 **Примечания:**
+
 - Для создания дуги необходимо задать центр, радиус и углы
 
 ---
@@ -477,7 +479,6 @@ virtual IEquidistantsPtr GetEquidistants() = 0;
 **Возвращаемое значение:** [`IEquidistants`](interface_page_files/IEquidistants.md) - указатель на коллекцию эквидистант.
 
 ---
-
 
 ### GetRectangles()
 
@@ -729,9 +730,6 @@ std::vector<ksapi::IDrawingObjectPtr> allObjects = container->GetObjects({});
 
 ---
 
-
-
-
 ---
 
 ## Частые ошибки
@@ -807,7 +805,7 @@ if (lcs)
 {
     double globalX, globalY;
     lcs->ConvertToGlobal(100, 100, globalX, globalY);
-    
+
     ksapi::ILineSegmentPtr line = lineSegments->Add();
     line->SetX1(globalX);
     line->SetY1(globalY);
@@ -1004,15 +1002,15 @@ bool CreateDrawingObject(ksapi::IDrawingContainerPtr container,
 {
     if (!container)
         return false;
-    
+
     Collection collection = getCollection(container);
     if (!collection)
         return false;
-    
+
     T obj = collection->Add();
     if (!obj)
         return false;
-    
+
     configure(obj);
     return obj->Update();
 }
@@ -1039,7 +1037,7 @@ void CreateMultipleObjects(ksapi::IDrawingContainerPtr container, int count)
     auto lineSegments = container->GetLineSegments();
     if (!lineSegments)
         return;
-    
+
     for (int i = 0; i < count; ++i)
     {
         if (ksapi::ILineSegmentPtr line = lineSegments->Add())
@@ -1065,7 +1063,7 @@ void ProcessObjectsByType(ksapi::IDrawingContainerPtr container,
                           Func processor)
 {
     auto objects = container->GetObjects(types);
-    
+
     for (auto& obj : objects)
     {
         if (ksapi::IDrawingObjectPtr drawingObj = obj)

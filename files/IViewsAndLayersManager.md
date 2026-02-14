@@ -60,6 +60,7 @@
 Менеджер видов и слоев 2D документа КОМПАС. Предоставляет доступ к коллекциям видов и групп слоев документа, позволяя управлять структурой организации графических объектов.
 
 **Основные характеристики:**
+
 - Наследуется от [`IKompasAPIObject`](interface_page_files/IKompasAPIObject.md)
 - Предоставляет доступ к коллекции видов [`IViews`](interface_page_files/IViews.md)
 - Предоставляет доступ к коллекции групп слоев [`ILayerGroups`](interface_page_files/ILayerGroups.md)
@@ -327,7 +328,7 @@ for (int32_t i = 0; i < layerGroups->GetCount(); i++)
     ksapi::ILayerGroupPtr group = layerGroups->GetItem(i);
     if (!group)
         continue;
-    
+
     // Настройка группы слоев
     group->SetCurrent(true);
 }

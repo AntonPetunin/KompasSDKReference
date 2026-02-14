@@ -570,7 +570,7 @@ void CreateText(ksapi::IDrawingContainerPtr drawingContainer)
   ksapi::IDrawingTextsPtr texts = drawingContainer->GetDrawingTexts();
   if (!texts)
     return;
-    
+
   ksapi::IDrawingTextPtr drawingText = texts->Add();
   ksapi::ITextPtr text = drawingText;
   if (!text)
@@ -595,9 +595,9 @@ void CreateText(ksapi::IDrawingContainerPtr drawingContainer)
   ksapi::ITextItemPtr item = textLine->Add();
   if (!item)
     return;
-    
+
   item->SetStr(L"Текст на чертеже");
-  
+
   // Применение изменений
   drawingText->Update();
 }
@@ -612,7 +612,7 @@ void CreateTextWithFraction(ksapi::IDrawingContainerPtr drawingContainer)
   ksapi::IDrawingTextsPtr texts = drawingContainer->GetDrawingTexts();
   if (!texts)
     return;
-    
+
   ksapi::IDrawingTextPtr drawingText = texts->Add();
   ksapi::ITextPtr text = drawingText;
   if (!text)
@@ -626,14 +626,14 @@ void CreateTextWithFraction(ksapi::IDrawingContainerPtr drawingContainer)
 
   // Создание строки с дробью
   ksapi::ITextLinePtr textLine = text->Add();
-  
+
   // Числитель дроби
   textLine->Add(ksTItNumerator, L"111");
-  // Знаменатель дроби  
+  // Знаменатель дроби
   textLine->Add(ksTItDenominator, L"222");
   // Конец дроби
   textLine->Add(ksTItFractionEnd, L" 333");
-  
+
   drawingText->Update();
 }
 ```
@@ -646,22 +646,22 @@ void CreateTextWithFraction(ksapi::IDrawingContainerPtr drawingContainer)
 
 ```cpp
 // Универсальный шаблон для создания текста
-ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts, double x, double y, 
+ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts, double x, double y,
                                    const std::wstring& content)
 {
     if (!texts)
         return nullptr;
-        
+
     ksapi::IDrawingTextPtr drawingText = texts->Add();
     if (!drawingText)
         return nullptr;
-        
+
     // Установка параметров
     drawingText->SetX(x);
     drawingText->SetY(y);
     drawingText->SetHeight(10);  // Значение по умолчанию
     drawingText->SetWidth(10);
-    
+
     // Получение интерфейса IText для содержимого
     ksapi::ITextPtr text = drawingText;
     if (text)
@@ -674,7 +674,7 @@ ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts, double x, doub
                 item->SetStr(content);
         }
     }
-    
+
     drawingText->Update();
     return drawingText;
 }
@@ -684,16 +684,16 @@ ksapi::IDrawingTextPtr CreateText(ksapi::IDrawingTextsPtr& texts, double x, doub
 
 ```cpp
 // Создание текста с несколькими строками
-void CreateMultilineText(ksapi::IDrawingTextPtr& drawingText, 
+void CreateMultilineText(ksapi::IDrawingTextPtr& drawingText,
                          const std::vector<std::wstring>& lines)
 {
     if (!drawingText)
         return;
-        
+
     ksapi::ITextPtr text = drawingText;
     if (!text)
         return;
-        
+
     for (const auto& line : lines)
     {
         ksapi::ITextLinePtr textLine = text->Add();
@@ -704,7 +704,7 @@ void CreateMultilineText(ksapi::IDrawingTextPtr& drawingText,
                 item->SetStr(line);
         }
     }
-    
+
     drawingText->Update();
 }
 ```

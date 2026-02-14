@@ -63,6 +63,7 @@
 Интерфейс `IView` предоставляет методы для работы с видами в 2D документах КОМПАС. Вид — это именованная область чертежа, содержащая графические объекты и имеющая собственные параметры масштаба, угла поворота, координат привязки и состояния.
 
 **Основные характеристики:**
+
 - Наследуется от [`IDrawingObject`](interface_page_files/IDrawingObject.md)
 - Предоставляет доступ к параметрам вида (имя, номер, масштаб, угол, координаты)
 - Позволяет управлять видимостью, состоянием (текущий/фоновый) и цветом вида
@@ -88,11 +89,15 @@
    - [`IViews::GetActiveView()`](interface_page_files/IViews.md#getactiveview) — получение активного вида
 
 2. **Как родитильский объект:**
-    - [`IKompasAPIObject::GetParent()`](interface_page_files/IKompasAPIObject) - получение родительского объекта.
+   - [`IKompasAPIObject::GetParent()`](interface_page_files/IKompasAPIObject) - получение родительского объекта.
 
 ## Дополнительные интерфейсы
 
-- **`IDrawingContainer`** — интерфейс контейнера объектов вида графического документа
+Через QueryInterface можно получить дополнительные интерфейсы:
+
+- **`ICutViewParam`** - параметры разреза
+- **`IBreakViewParam`** - параметры разрыва
+- **`IViewDesignation`** - обозначение вида
 
 ## Методы интерфейса
 
@@ -289,7 +294,6 @@ virtual double GetY() = 0;
 
 **Возвращаемое значение GetY:** Координата Y точки привязки вида в системе координат листа.
 
-
 ---
 
 ### SetAngle / GetAngle
@@ -313,7 +317,6 @@ virtual double GetAngle() = 0;
 - `angle` (in) — угол поворота в градусах (от -360 до 360)
 
 **Возвращаемое значение GetAngle:** Угол поворота вида относительно листа чертежа в градусах.
-
 
 ---
 
@@ -357,7 +360,6 @@ virtual double GetNumerator() = 0;
 - `numerator` (in) — числитель масштаба
 
 **Возвращаемое значение GeNumerator():** числителя масштаба вида (double).
-
 
 ---
 
@@ -602,6 +604,7 @@ virtual IVariablePtr GetDimensionVariable(const IDimension2DPtr & dimension) = 0
 - `dimension` (in) — размер, для которого нужно получить переменную
 
 **Возвращаемое значение:**
+
 - `GetVariables()`: массив всех переменных
 - `GetVariable()`: переменная по индексу или nullptr
 - `GetVariableByName()`: переменная по имени или nullptr
@@ -1140,7 +1143,7 @@ for (int32_t i = 0; i < views->GetCount(); i++)
     IViewPtr view = views->GetView(i);
     if (view)
     {
-        std::wcout << L"Вид: " << view->GetName() 
+        std::wcout << L"Вид: " << view->GetName()
                    << L" №" << view->GetNumber()
                    << L" Масштаб:" << view->GetScale() << std::endl;
     }

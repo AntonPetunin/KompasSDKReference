@@ -110,14 +110,13 @@ if (circle)
 
 ## Дополнительные интерфейсы
 
-Интерфейс `ICircle` наследует функциональность от `IDrawingObject`, через которую доступны дополнительные интерфейсы:
+Интерфейс `ICircle` не имеет дополнительных интерфейсов, получаемых через QueryInterface. Однако он наследует функциональность от `IDrawingObject`, через которую доступны интерфейсы:
 
 - **`ICurve2D`** - интерфейс математической кривой (доступен через `GetCurve2D()`)
 
 **Связанные интерфейсы для работы с окружностями:**
 
 - **`ICircles`** - коллекция окружностей
-
 
 ## Методы интерфейса
 
@@ -500,7 +499,7 @@ circle->SetRadius(10);
 
 ```cpp
 // Source/Steps/Step3D3/Step3D3.cpp
-void Circle(ksapi::IFragmentDocumentPtr fragmentDocument, double xc, double yc, double radius, int32_t style)                                                      
+void Circle(ksapi::IFragmentDocumentPtr fragmentDocument, double xc, double yc, double radius, int32_t style)
 {
   if (ksapi::IViewsAndLayersManagerPtr layersMngr = fragmentDocument->GetViewsAndLayersManager())
   {

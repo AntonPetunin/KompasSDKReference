@@ -66,6 +66,7 @@
 Коллекция видов 2D документа КОМПАС. Наследует от `IDrawingObjects` и предоставляет специализированные методы для работы с видами 2D документа.
 
 **Основные характеристики:**
+
 - Наследуется от [`IDrawingObjects`](interface_page_files/IDrawingObjects.md)
 - Предоставляет методы для получения видов по индексу, имени и номеру
 - Позволяет создавать новые виды различных типов
@@ -110,7 +111,7 @@ ksapi::IViewPtr activeView = views->GetActiveView();
 
 ## Дополнительные интерфейсы
 
-Интерфейс `IViews` наследуется от `IDrawingObjects` и предоставляет доступ к следующим интерфейсам:
+Интерфейс `IViews` не имеет дополнительных интерфейсов, но наследуется от `IDrawingObjects` и предоставляет доступ к следующим интерфейсам:
 
 ### Интерфейсы, получаемые из IViews:
 
@@ -176,7 +177,7 @@ for (int32_t i = 0; i < views->GetCount(); i++)
     ksapi::IViewPtr view = views->GetView(i);
     if (!view)
         continue;
-    
+
     auto name = view->GetName();
     // Работа с видом
 }
@@ -469,7 +470,7 @@ bool result = views->AddStandartViews(
 
 if (!result)
 {
-    kompasApp->ShowMessageBox(L"Не удалось создать виды", L"Ошибка", 
+    kompasApp->ShowMessageBox(L"Не удалось создать виды", L"Ошибка",
                              ksMessageError, ksButtonSetOk, true);
 }
 ```
@@ -599,7 +600,7 @@ bool FindViewByNumber(ksapi::IViewsPtr views, int32_t number, ksapi::IViewPtr& r
     result = nullptr;
     if (!views)
         return false;
-    
+
     result = views->GetViewByNumber(number);
     return result != nullptr;
 }
@@ -613,13 +614,13 @@ bool CreateStandardViews(ksapi::IViewsPtr views, const std::wstring& modelPath)
 {
     if (!views)
         return false;
-    
+
     std::vector<int32_t> projections = {
         0x1,   // Спереди
         0x4,   // Сверху
         0x40   // Изометрия
     };
-    
+
     return views->AddStandartViews(
         modelPath,
         L"Изометрия",

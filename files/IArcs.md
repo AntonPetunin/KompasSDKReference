@@ -168,7 +168,6 @@ for (int32_t i = 0; i < count; ++i)
 }
 ```
 
-
 **Примечания:**
 
 - Индекс дуги остаётся постоянным на протяжении жизни объекта
@@ -317,22 +316,22 @@ bool CreateArc(ksapi::IDrawingContainerPtr container,
 {
     if (!container)
         return false;
-    
+
     ksapi::IArcsPtr arcs = container->GetArcs();
     if (!arcs)
         return false;
-    
+
     ksapi::IArcPtr arc = arcs->Add();
     if (!arc)
         return false;
-    
+
     arc->SetXc(xc);
     arc->SetYc(yc);
     arc->SetRadius(radius);
     arc->SetAngle1(angle1);
     arc->SetAngle2(angle2);
     arc->SetDirection(clockwise);
-    
+
     return arc->Update();
 }
 
@@ -352,11 +351,11 @@ bool CreateArcBy3Points(ksapi::IDrawingContainerPtr container,
     ksapi::IArcsPtr arcs = container->GetArcs();
     if (!arcs)
         return false;
-    
+
     ksapi::IArcPtr arc = arcs->Add();
     if (!arc)
         return false;
-    
+
     // Задание координат трёх точек
     arc->SetX1(x1);
     arc->SetY1(y1);
@@ -364,7 +363,7 @@ bool CreateArcBy3Points(ksapi::IDrawingContainerPtr container,
     arc->SetY2(y2);
     arc->SetX3(x3);  // Средняя точка определяет положение дуги
     arc->SetY3(y3);
-    
+
     return arc->Update();
 }
 ```
@@ -379,10 +378,10 @@ void ForEachArc(ksapi::IDrawingContainerPtr container, Func processor)
     ksapi::IArcsPtr arcs = container->GetArcs();
     if (!arcs)
         return;
-    
+
     ksapi::IKompasCollectionPtr collection = arcs;
     int32_t count = collection->GetCount();
-    
+
     for (int32_t i = 0; i < count; ++i)
     {
         ksapi::IArcPtr arc = arcs->GetArc(i);

@@ -65,6 +65,7 @@
 Интерфейс `IDocuments` наследует методы [`IKompasCollection`](interface_page_files/IKompasCollection.md) и расширяет его функциональность специфичными методами для работы с документами. Через этот интерфейс можно работать со всеми типами документов КОМПАС: чертежами (2D), моделями (3D), спецификациями, фрагментами и другими.
 
 **Основные характеристики:**
+
 - Управление коллекцией всех открытых документов в приложении
 - Создание новых документов различных типов
 - Открытие существующих файлов с различными параметрами
@@ -118,7 +119,7 @@ if (newDoc)
 
 ## Дополнительные интерфейсы
 
-От интерфейса `IDocuments` и его методов можно получить следующие дополнительные интерфейсы:
+Интерфейс `IDocuments` не имеет дополнительных интерфейсов, получаемых через QueryInterface. Однако из его методов можно получить следующие интерфейсы:
 
 - **`IKompasDocument`** - базовый интерфейс документа (возвращается методами `Add()`, `Open()`)
 - **`IKompasDocument2D`** - интерфейс 2D чертежа
@@ -409,7 +410,7 @@ ksapi::IDocumentsPtr documents = kompasApp->GetDocuments();
 if (documents)
 {
     std::vector<std::wstring> fileNames = {L"C:\\Model1.m3d", L"C:\\Model2.m3d", L"C:\\Assembly.asm"};
-    
+
     for (const auto& fileName : fileNames)
     {
         ksapi::IKompasDocumentPtr doc = documents->Open(fileName, true, false);
@@ -720,7 +721,6 @@ virtual std::vector<std::wstring> GetEmbodimentsTree(const std::wstring & fileNa
 
 **Возвращаемое значение:** Массив строк дерева исполнений.
 
-
 ---
 
 ## Частые ошибки
@@ -796,10 +796,10 @@ void CreateDocument3D()
       // Установить информацию о документе
       pDocument3d->SetAuthor(L"Автор");
       pDocument3d->SetComment(L"Документ 3D модели");
-      
+
       // Сохранить документ
       pDocument3d->SaveAs(L"C:\\Example.m3d");
-      
+
       // Закрыть документ без сохранения
       pDocument3d->Close(DocumentCloseOptions::kdDoNotSaveChanges);
     }
@@ -818,7 +818,7 @@ void ChoiceAndOpenFiles()
     return;
 
   ksapi::IDocumentsPtr documents = kompasApp->GetDocuments();
-  
+
   // Выбор файлов пользователем
   std::vector<std::wstring> rArDocFileName = applicationDialogs->ChoiceFiles(
       nullptr, L"*.m3d", L"Файлы КОМПАС 3D", L"C://", ksSystemPathTypeEnum::ksSystemFiles, true);
@@ -850,11 +850,11 @@ void CreateFragment()
   ksapi::IDocumentsPtr documents = kompasApp->GetDocuments();
   if (!documents)
     return;
-    
+
   ksapi::IFragmentDocumentPtr docFragment = documents->Add(DocumentTypeEnum::ksDocumentFragment, true);
   if (!docFragment)
     return;
-    
+
   // Работа с фрагментом...
 }
 ```
@@ -867,14 +867,14 @@ void CreateFragment()
 
 ```cpp
 // Универсальный шаблон для открытия документа
-ksapi::IKompasDocumentPtr OpenDocumentSafely(ksapi::IDocumentsPtr& documents, 
+ksapi::IKompasDocumentPtr OpenDocumentSafely(ksapi::IDocumentsPtr& documents,
                                               const std::wstring& filePath,
-                                              bool visible = true, 
+                                              bool visible = true,
                                               bool readOnly = false)
 {
     if (!documents || filePath.empty())
         return nullptr;
-        
+
     // Проверяем, не открыт ли уже документ
     ksapi::IKompasDocumentPtr existing = documents->GetItemByFilePath(filePath);
     if (existing)
@@ -882,7 +882,7 @@ ksapi::IKompasDocumentPtr OpenDocumentSafely(ksapi::IDocumentsPtr& documents,
         existing->GetDocumentFrame()->SetActive();
         return existing;
     }
-    
+
     // Открываем новый документ
     return documents->Open(filePath, visible, readOnly);
 }
@@ -897,11 +897,11 @@ DocType CreateDocument(ksapi::IDocumentsPtr& documents, DocumentTypeEnum docType
 {
     if (!documents)
         return nullptr;
-        
+
     DocType doc = documents->Add(docType, visible);
     if (!doc)
         return nullptr;
-        
+
     // Дополнительная инициализация
     return doc;
 }
@@ -915,13 +915,13 @@ void ProcessAllDocuments(ksapi::IDocumentsPtr documents)
 {
     if (!documents)
         return;
-        
+
     for (int32_t i = 0; i < documents->GetCount(); ++i)
     {
         ksapi::IKompasDocumentPtr doc = documents->GetItem(i);
         if (!doc)
             continue;
-            
+
         // Обработка в зависимости от типа
         switch (doc->GetDocumentType())
         {

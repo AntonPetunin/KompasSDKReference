@@ -54,6 +54,7 @@
 Базовый интерфейс для всей системы управления объектами КОМПАС API. Является корневым интерфейсом иерархии, от которого наследуются все остальные интерфейсы через [`IKompasAPIObject`](interface_page_files/IKompasAPIObject.md).
 
 **Основные характеристики:**
+
 - Корневой интерфейс всей иерархии объектов КОМПАС API
 - Предоставляет базовые механизмы управления временем жизни объектов через подсчет ссылок
 - Реализует паттерн QueryInterface для получения дополнительных интерфейсов
@@ -68,9 +69,9 @@
 
 ### Основные способы получения:
 
- **Через методы существующих объектов:**
-   - Через [`QueryInterface()`](#queryinterface) от любого объекта
+**Через методы существующих объектов:**
 
+- Через [`QueryInterface()`](#queryinterface) от любого объекта
 
 ### Примеры получения:
 
@@ -101,8 +102,6 @@ void ProcessDocument(ksapi::IKompasDocumentPtr doc)
 - **`IKompasApplication`** - приложение КОМПАС
 - **`IKompasDocument`** - документ КОМПАС
 - **`IKompasCollection`** - коллекции объектов
-
-
 
 ## Методы интерфейса
 
@@ -346,8 +345,8 @@ if (base)
 ksapi::IAPIObject * KompasConverter::QueryInterface(ksapi::IAPIObjectIID iid)
 {
     // Проверяем поддерживаемые интерфейсы
-    if (iid == ksapi::IID_IAPIObject || 
-        iid == ksapi::IID_ILibraryObject || 
+    if (iid == ksapi::IID_IAPIObject ||
+        iid == ksapi::IID_ILibraryObject ||
         iid == ksapi::IID_ILibraryConverter)
         return this;  // Возвращаем себя с увеличенным счетчиком ссылок
     return nullptr;   // Интерфейс не поддерживается
