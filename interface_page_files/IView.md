@@ -82,14 +82,14 @@
 ### Основные способы получения:
 
 1. **Из коллекции видов:**
-   - [`IViews::Add()`](interface_page_files/IViews.md#add) — создание нового вида
-   - [`IViews::GetView()`](interface_page_files/IViews.md#getview) — получение по индексу
-   - [`IViews::GetViewByName()`](interface_page_files/IViews.md#getviewbyname) — получение по имени
-   - [`IViews::GetViewByNumber()`](interface_page_files/IViews.md#getviewbynumber) — получение по номеру
-   - [`IViews::GetActiveView()`](interface_page_files/IViews.md#getactiveview) — получение активного вида
+   - [`IViews::Add()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md#add) — создание нового вида
+   - [`IViews::GetView()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md#getview) — получение по индексу
+   - [`IViews::GetViewByName()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md#getviewbyname) — получение по имени
+   - [`IViews::GetViewByNumber()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md#getviewbynumber) — получение по номеру
+   - [`IViews::GetActiveView()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md#getactiveview) — получение активного вида
 
 2. **Как родитильский объект:**
-   - [`IKompasAPIObject::GetParent()`](interface_page_files/IKompasAPIObject) - получение родительского объекта.
+   - [`IKompasAPIObject::GetParent()`](docs/База Компас API/IKompasAPIObject.md) - получение родительского объекта.
 
 ## Дополнительные интерфейсы
 

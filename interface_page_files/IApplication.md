@@ -323,7 +323,7 @@ virtual IKompasDocumentPtr GetActiveDocument() = 0;
 
 **Параметры:** нет
 
-**Возвращаемое значение:** Указатель на интерфейс [`IKompasDocumentPtr`](files/IKompasDocument.md) активного документа
+**Возвращаемое значение:** Указатель на интерфейс [`IKompasDocumentPtr`]() активного документа
 
 #### **Пример использования**
 

@@ -77,9 +77,9 @@
 ### Основные способы получения:
 
 1. **Из коллекции окружностей:**
-   - [`IDrawingContainer::GetCircles()`](interface_page_files/IDrawingContainer.md) - получение коллекции окружностей из контейнера чертежа
-   - [`ICircles::Add()`](interface_page_files/ICircles.md) - создание новой окружности
-   - [`ICircles::GetCircle(index)`](interface_page_files/ICircles.md) - получение окружности по индексу
+   - [`IDrawingContainer::GetCircles()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md) - получение коллекции окружностей из контейнера чертежа
+   - [`ICircles::Add()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/ICircles.md) - создание новой окружности
+   - [`ICircles::GetCircle(index)`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/ICircles.md) - получение окружности по индексу
 
 2. **Из документа или контекста:**
    - При работе с эскизом 3D модели через `IFragmentDocument`

@@ -386,4 +386,4 @@ void CreateHorizontalGrid(ksapi::IDrawingContainerPtr drawingContainer,
 
 - [ILineSegment](interface_page_files/ILineSegment.md) - интерфейс отрезка
 - [IDrawingContainer](interface_page_files/IDrawingContainer.md) - графический контейнер
-- [IKompasCollection](interface_page_files/IKompasCollection.md) - базовый интерфейс коллекции
+- [IKompasCollection](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IKompasCollection.md) - базовый интерфейс коллекции

@@ -61,15 +61,15 @@
 
 **Основные характеристики:**
 
-- Наследуется от [`IKompasAPIObject`](interface_page_files/IKompasAPIObject.md)
-- Предоставляет доступ к коллекции видов [`IViews`](interface_page_files/IViews.md)
-- Предоставляет доступ к коллекции групп слоев [`ILayerGroups`](interface_page_files/ILayerGroups.md)
+- Наследуется от [`IKompasAPIObject`](docs/База Компас API/IKompasAPIObject.md)
+- Предоставляет доступ к коллекции видов [`IViews`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IViews.md)
+- Предоставляет доступ к коллекции групп слоев [`ILayerGroups`]()
 - Доступен только для 2D документов (чертеж, фрагмент)
 - Является основной точкой доступа для работы с видами и слоями
 
 ## Важные примечания
 
-1. **Только для 2D документов:** Интерфейс доступен для [`IKompasDocument2D`](interface_page_files/IKompasDocument2D.md).
+1. **Только для 2D документов:** Интерфейс доступен для [`IKompasDocument2D`]().
 2. **Всегда проверяйте указатели:** Методы [`GetViews()`](#getviews) и [`GetLayerGroups()`](#getlayergroups) могут вернуть `nullptr`.
 3. **Объекты принадлежат видам:** Графические объекты принадлежат конкретным видам, а не документам напрямую.
 4. После изменения структуры видов или слоев может потребоваться обновление документа.
@@ -111,10 +111,10 @@ if (!views)
 
 ### Связанные интерфейсы:
 
-- **[`IView`](interface_page_files/IView.md)** - отдельный вид документа
-- **[`ILayerGroup`](interface_page_files/ILayerGroup.md)** - группа слоев
-- **[`ILayer`](interface_page_files/ILayer.md)** - слой
-- **[`IDrawingContainer`](interface_page_files/IDrawingContainer.md)** - контейнер для графических примитивов
+- **[`IView`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/IView.md)** - отдельный вид документа
+- **[`ILayerGroup`]()** - группа слоев
+- **[`ILayer`]()** - слой
+- **[`IDrawingContainer`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md)** - контейнер для графических примитивов
 
 ## Методы интерфейса
 

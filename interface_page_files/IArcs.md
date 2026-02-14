@@ -84,7 +84,7 @@
 ### Основные способы получения:
 
 1. **Из IDrawingContainer:**
-   - [`IDrawingContainer::GetArcs()`](interface_page_files/IDrawingContainer.md#getarcs) - основной способ получения коллекции дуг
+   - [`IDrawingContainer::GetArcs()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md#getarcs) - основной способ получения коллекции дуг
 
 ### Примеры получения:
 

@@ -79,9 +79,9 @@
 ### Основные способы получения:
 
 1. **Из коллекции текстов:**
-   - [`IDrawingContainer::GetDrawingTexts()`](interface_page_files/IDrawingContainer.md) - получение коллекции текстов из контейнера чертежа
-   - [`IDrawingTexts::Add()`](interface_page_files/IDrawingTexts.md) - создание нового текста
-   - [`IDrawingTexts::GetDrawingText(index)`](interface_page_files/IDrawingTexts.md) - получение текста по индексу
+   - [`IDrawingContainer::GetDrawingTexts()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md) - получение коллекции текстов из контейнера чертежа
+   - [`IDrawingTexts::Add()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/IDrawingTexts.md) - создание нового текста
+   - [`IDrawingTexts::GetDrawingText(index)`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/IDrawingTexts.md) - получение текста по индексу
 
 2. **Приведение типов:**
    - При получении объекта типа `IDrawingObject` можно выполнить приведение к `IDrawingText`, если `GetDrawingObjectType() == DrawingObjectTypeEnum::ksDrText`

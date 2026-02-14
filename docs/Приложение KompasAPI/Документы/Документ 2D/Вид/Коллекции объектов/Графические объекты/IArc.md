@@ -79,11 +79,11 @@
 ### Основные способы получения:
 
 1. **Из коллекции объектов:**
-   - [`IArcs::Add()`](interface_page_files/IArcs.md) — создание новой дуги в коллекции
-   - [`IArcs::GetArc()`](interface_page_files/IArcs.md) — получение дуги по индексу
+   - [`IArcs::Add()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/IArcs.md) — создание новой дуги в коллекции
+   - [`IArcs::GetArc()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/IArcs.md) — получение дуги по индексу
 
 2. **Из контейнера чертежа:**
-   - [`IDrawingContainer::GetArcs()`](interface_page_files/IDrawingContainer.md) — получение коллекции дуг из вида/слоя
+   - [`IDrawingContainer::GetArcs()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md) — получение коллекции дуг из вида/слоя
 
 3. **Приведение типов:**
    - Через `SmartPtr<IArc>` от `IDrawingObjectPtr`

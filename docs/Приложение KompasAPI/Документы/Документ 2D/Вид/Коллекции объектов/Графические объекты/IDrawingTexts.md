@@ -78,7 +78,7 @@
 ### Основные способы получения:
 
 1. **Из контейнера чертежа:**
-   - [`IDrawingContainer::GetDrawingTexts()`](interface_page_files/IDrawingContainer.md) - получение коллекции текстов из контейнера чертежа
+   - [`IDrawingContainer::GetDrawingTexts()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IDrawingContainer.md) - получение коллекции текстов из контейнера чертежа
 
 2. **Пример получения:**
    ```cpp

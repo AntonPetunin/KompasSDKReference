@@ -67,7 +67,7 @@
 
 **Основные характеристики:**
 
-- Наследуется от [`IDrawingObjects`](interface_page_files/IDrawingObjects.md)
+- Наследуется от [`IDrawingObjects`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/Графические объекты/IDrawingObjects.md)
 - Предоставляет методы для получения видов по индексу, имени и номеру
 - Позволяет создавать новые виды различных типов
 - Поддерживает создание стандартных ассоциативных видов из 3D моделей
@@ -75,7 +75,7 @@
 
 ## Важные примечания
 
-1. **Наследование от IKompasCollection:** Интерфейс наследует методы [`GetObjects()`](interface_page_files/IKompasCollection.md) и [`GetCount()`](interface_page_files/IKompasCollection.md) от базового интерфейса.
+1. **Наследование от IKompasCollection:** Интерфейс наследует методы [`GetObjects()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IKompasCollection.md) и [`GetCount()`](docs/Приложение KompasAPI/Документы/Документ 2D/Вид/Коллекции объектов/IKompasCollection.md) от базового интерфейса.
 2. **Всегда проверяйте указатели:** Методы получения видов могут вернуть `nullptr`.
 3. **Активный вид:** [`GetActiveView()`](#getactiveview) возвращает текущий активный вид документа.
 
@@ -84,7 +84,7 @@
 ### Основные способы получения:
 
 1. **Из IViewsAndLayersManager:**
-   - [`IViewsAndLayersManager::GetViews()`](interface_page_files/IViewsAndLayersManager.md#getviews) - единственный способ получения
+   - [`IViewsAndLayersManager::GetViews()`](docs/Приложение KompasAPI/Документы/Документ 2D/IViewsAndLayersManager.md#getviews) - единственный способ получения
 
 ### Примеры получения:
 
