@@ -35,4 +35,7 @@
             </dir>
         </dir>
     </dir>
+    <dir name="Константы">
+        <item>DrawingObjectTypeEnum</item>
+    </dir>
 </map>
