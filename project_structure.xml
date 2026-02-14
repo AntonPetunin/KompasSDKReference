@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+    <dir name="База Компас API">
+        <item>IAPIObject</item>
+        <item>IKompasAPIObject</item>
+    </dir>
+    <dir name="Приложение KompasAPI">
+        <item>IApplication</item>
+        <dir name="Документы">
+            <item>IDocuments</item>
+            <dir name="Документ 2D">
+                <item>IKompasDocument2D</item>
+                <item>IViewsAndLayersManager</item>
+                <dir name="Вид">
+                    <item>IViews</item>
+                    <item>IView</item>
+                    <dir name="Коллекции объектов">
+                        <item>IKompasCollection</item>
+                        <item>IDrawingContainer</item>
+                        <dir name="Графические объекты">
+                            <item>IDrawingObjects</item>
+                            <item>IDrawingObject</item>
+                            <item>IMacroObject</item>
+                            <item>ILineSegment</item>
+                            <item>ILineSegments</item>
+                            <item>IArc</item>
+                            <item>IArcs</item>
+                            <item>ICircle</item>
+                            <item>ICircles</item>
+                            <item>IDrawingText</item>
+                            <item>IDrawingTexts</item>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </dir>
+    </dir>
+    <dir name="Константы">
+        <item>DrawingObjectTypeEnum</item>
+    </dir>
+</map>
