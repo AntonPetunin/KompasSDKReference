@@ -1,0 +1,150 @@
+@startuml benefits
+title Сравнение подходов: Текущая ситуация vs Разрабатываемое решение
+
+' === НАСТРОЙКИ ===
+skinparam componentPadding 80
+skinparam componentMargin 40
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+skinparam rectangle {
+  BorderColor black
+  BorderThickness 2
+  FontSize 12
+}
+hide stereotype
+
+' === ЛЕВАЯ ЧАСТЬ: ТЕКУЩАЯ СИТУАЦИЯ ===
+rectangle "ТЕКУЩАЯ СИТУАЦИЯ" as Current {
+  rectangle "Источники информации" {
+    rectangle "Официальная справка SDK" as OldDocs
+    rectangle "Классические примеры\nот разработчиков API" as OldExamples
+    rectangle "Техподдержка" as Support
+    rectangle "Каналы связи\nс командой Приложения" as Contacts
+  }
+  
+  rectangle "Проблемы" {
+    rectangle "Неполная документация" as Problem1
+    rectangle "Нет реальных примеров" as Problem2
+    rectangle "Часы поиска решений" as Problem3
+    rectangle "Зависимость от наличия\nканалов связи с командой Приложения" as Problem4
+    rectangle "Долгое ожидание\nответа" as Problem5
+    rectangle "Брошенные проекты" as Problem6
+  }
+  
+  rectangle "Последствия для бизнеса" {
+    rectangle "Высокий порог входа\nдля новых разработчиков" as Conseq1
+    rectangle "Потеря времени\n(часы → дни)" as Conseq2
+    rectangle "Нагрузка на\nразработчиков API" as Conseq3
+    rectangle "Нагрузка на\nтехподдержку" as Conseq4
+    rectangle "Упущенные проекты\nи партнёры" as Conseq5
+  }
+}
+
+' === СВЯЗИ В ТЕКУЩЕЙ СИТУАЦИИ ===
+OldDocs --> Problem1
+OldExamples --> Problem2
+Support --> Problem5
+Contacts --> Problem4
+Problem1 --> Problem3
+Problem2 --> Problem3
+Problem4 --> Problem3
+Problem5 --> Problem3
+Problem3 --> Problem6
+Problem4 --> Problem6
+
+Problem6 --> Conseq1
+Problem3 --> Conseq2
+Problem1 --> Conseq3
+Problem5 --> Conseq4
+Problem4 --> Conseq5
+
+' === ПРАВАЯ ЧАСТЬ: РАЗРАБАТЫВАЕМОЕ РЕШЕНИЕ ===
+rectangle "РАЗРАБАТЫВАЕМОЕ РЕШЕНИЕ" as Future {
+  rectangle "Новая документационная платформа" {
+    rectangle "Структурированная\nдокументация" as NewDocs
+    rectangle "База классических примеров\n(от команды API)" as NewClassic
+    rectangle "База реальных примеров\n(от команды Панченко)" as NewReal
+    rectangle "Нейроагент\n(мгновенные ответы)" as Neuro
+  }
+  
+  rectangle "Преимущества" {
+    rectangle "Полная и проверенная\nдокументация" as Benefit1
+    rectangle "Реальные примеры\nиз практики" as Benefit2
+    rectangle "Поиск за минуты\nвместо часов" as Benefit3
+    rectangle "Мгновенные ответы\nбез ожидания" as Benefit4
+    rectangle "Независимость\nот каналов связи" as Benefit5
+  }
+  
+  rectangle "Результаты для бизнеса" {
+    rectangle "Низкий порог входа\nдля новичков" as Result1
+    rectangle "Ускорение разработки\n(часы → минуты)" as Result2
+    rectangle "Разгрузка разработчиков API\n(меньше прямых вопросов)" as Result3
+    rectangle "Разгрузка техподдержки\n(меньше обращений)" as Result4
+    rectangle "Рост числа партнёров\nи готовых проектов" as Result5
+  }
+}
+
+' === СВЯЗИ В РАЗРАБАТЫВАЕМОМ РЕШЕНИИ ===
+NewDocs --> Benefit1
+NewReal --> Benefit2
+Neuro --> Benefit3
+Neuro --> Benefit4
+NewClassic --> Benefit1
+
+Benefit1 --> Result1
+Benefit2 --> Result1
+Benefit3 --> Result2
+Benefit4 --> Result4
+Benefit5 --> Result3
+Benefit1 --> Result5
+Benefit2 --> Result5
+Benefit3 --> Result5
+
+' === СРАВНИТЕЛЬНЫЕ ПОКАЗАТЕЛИ ===
+rectangle "КЛЮЧЕВЫЕ МЕТРИКИ" as Metrics {
+  rectangle "Время поиска решения" {
+    rectangle "Сейчас: часы\n(ожидание ответа)" as TimeNow
+    rectangle "Будет: минуты\n(мгновенно)" as TimeFuture
+  }
+  
+  rectangle "Доступ к реальным примерам" {
+    rectangle "Сейчас: только при наличии\nпрямых каналов связи\nс командой Приложения" as AccessNow
+    rectangle "Будет: через нейроагента\n(доступно всем)" as AccessFuture
+  }
+  
+  rectangle "Нагрузка на разработчиков API" {
+    rectangle "Сейчас: высокая\n(30-40 прямых\nвопросов/неделя)" as LoadNow
+    rectangle "Будет: низкая\n(5-10 вопросов/неделя)" as LoadFuture
+  }
+  
+  rectangle "Нагрузка на техподдержку" {
+    rectangle "Сейчас: высокая\n(много повторяющихся\nвопросов)" as SupportLoadNow
+    rectangle "Будет: низкая\n(вопросы снимаются\nнейроагентом)" as SupportLoadFuture
+  }
+}
+
+' === СТРЕЛКИ СРАВНЕНИЯ ===
+TimeNow -[hidden]- TimeFuture
+AccessNow -[hidden]- AccessFuture
+LoadNow -[hidden]- LoadFuture
+SupportLoadNow -[hidden]- SupportLoadFuture
+
+note top of TimeNow : ⚠️
+note bottom of TimeFuture : ✅
+note top of AccessNow : ⚠️
+note bottom of AccessFuture : ✅
+note top of LoadNow : ⚠️
+note bottom of LoadFuture : ✅
+note top of SupportLoadNow : ⚠️
+note bottom of SupportLoadFuture : ✅
+
+' === ИТОГОВЫЙ ВЫВОД ===
+note bottom of Metrics
+  **ГЛАВНЫЙ РЕЗУЛЬТАТ:**
+  • Снижение порога входа
+  • Ускорение поиска решений в 10-20 раз
+  • Разгрузка техподдержки
+  • Рост успешных проектов в 2-3 раза
+end note
+
+@enduml
