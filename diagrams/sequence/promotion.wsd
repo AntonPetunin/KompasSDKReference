@@ -1,0 +1,65 @@
+@startuml promotion_sequence
+title Продвижение новой документации
+
+' Увеличиваем расстояния
+skinparam componentPadding 80
+skinparam componentMargin 40
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+actor "Разработчики\nрешения" as Team
+actor "Циварев Антон\n(маркетинг, партнёры)" as Tsivarev
+actor "Липин Владимир\n(техподдержка)" as Lipin
+actor "Партнёры Аскон\n(вендоры, интеграторы)" as Partners
+actor "Внешние разработчики" as External
+actor "Полувнешние разработчики" as SemiExternal
+participant "Новая документация\n+ нейроагент" as Project
+participant "Сообщество\nразработчиков" as Community
+
+== ПОДГОТОВКА К ПРОДВИЖЕНИЮ ==
+
+Project -> Team: Готовый продукт
+Team -> Tsivarev: Материалы для\nмаркетинга
+Tsivarev -> Tsivarev: Подготовка
+note left of Tsivarev
+- презентации
+- кейсы
+- статьи
+- демо
+end note
+
+Team -> Lipin: Инструкции для\nтехподдержки
+
+== ПРОДВИЖЕНИЕ ЧЕРЕЗ АНТОНА ЦИВАРЕВА ==
+
+Tsivarev -> Partners: Презентация партнёрам
+Partners -> Project: Тестирование
+Partners --> Tsivarev: Обратная связь
+Tsivarev -> Tsivarev: Адаптация материалов
+
+Tsivarev -> Community: Посты, статьи,\nвыступления
+Community -> Project: Интерес,\nпервые пользователи
+
+Tsivarev -> External: Рекламные кампании
+External -> Project: Приходят пробовать
+
+== ПРОДВИЖЕНИЕ ЧЕРЕЗ ВЛАДИМИРА ЛИПИНА ==
+
+Lipin -> External: Рекомендации в ответах\nтехподдержки
+External -> Project: Переходят в\nдокументацию
+
+Lipin -> SemiExternal: Персональные\nрекомендации
+SemiExternal -> Project: Используют
+
+== ЭФФЕКТ СИНЕРГИИ ==
+
+Project -> Community: Растёт база\nпользователей
+
+Community -> Community: Обмен опытом
+Community -> Project: Новые примеры\nот сообщества
+
+Project --> Tsivarev: Метрики для отчётов
+Project --> Lipin: Снижение нагрузки\nна техподдержку
+
+
+@enduml

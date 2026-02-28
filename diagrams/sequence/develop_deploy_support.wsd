@@ -1,0 +1,98 @@
+@startuml seq_dev_deploy_support
+title Разработка, внедрение, поддержка и развитие
+
+' Увеличиваем расстояния
+skinparam componentPadding 80
+skinparam componentMargin 40
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+actor "Разработчики\nрешения" as Team
+actor "Команда Панченко\n(источник примеров)" as Panchenko
+actor "Разработчики API\nАвторы справки" as APIDev
+actor "Авторы справки\n(валидация)" as APIDev
+actor "Владимир Липин\n(обратная связь)" as Lipin
+actor "Сергей Евсиков\n(отчётность)" as Evsikov
+participant "Новая документация\n+ нейроагент" as Project
+participant "Пользователи\n(внешние/полувнешние)" as Users
+
+== ФАЗА 3: РАЗРАБОТКА ==
+
+Team -> Project: Начало разработки
+
+note right of Users
+- архитектура
+- структура документации
+- интеграция примеров
+- нейроагент
+end note
+
+loop Спринты разработки
+  Project -> Panchenko: Уточнения по примерам
+  Panchenko --> Project: Пояснения
+  
+  Project -> APIDev: Вопросы по API
+  APIDev --> Project: Разъяснения
+  
+  Project -> APIDev: Проверка разделов
+  APIDev --> Project: Обратная связь
+  
+  Team -> Project: Реализация
+end
+
+Project -> Project: MVP готов
+
+== ФАЗА 4: ВНЕДРЕНИЕ И ТЕСТИРОВАНИЕ ==
+
+Team -> Lipin: Приглашаем к тестированию
+Lipin -> Users: Привлечение внешних
+
+Users -> Project: Работа с документацией
+Project --> Users: Ответы
+
+Users -> Lipin: Обратная связь
+Lipin --> Team: Сводка проблем
+
+== ФАЗА 5: ДОРАБОТКА ==
+
+Team -> Project: Анализ обратной связи
+Team -> Project: Доработка
+Team -> APIDev: Проверка изменений
+APIDev --> Team: Валидация
+Team -> Project: Финальные исправления
+
+Project -> Project: Релиз
+
+== ФАЗА 7: ПОДДЕРЖКА И РАЗВИТИЕ ==
+
+loop Постоянный процесс
+  Lipin -> Team: Новые запросы
+  Panchenko -> Project: Новые примеры
+  APIDev -> Project: Обновления API
+  APIDev -> Project: Актуализация
+  
+  Team -> Project: Обновление
+  
+  Project -> Users: Улучшенная версия
+  Users -> Project: Использование
+end
+
+Project -> Evsikov: Метрики
+
+note right of Users
+Метрики:
+- количество пользователей
+- снижение обращений
+- рост проектов
+end note
+
+Evsikov --> Team: Решение о развитии
+
+note right of Project
+  Результат:
+  - работающий продукт
+  - постоянное обновление
+  - измеримые результаты
+end note
+
+@enduml
