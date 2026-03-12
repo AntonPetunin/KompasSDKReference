@@ -24,7 +24,7 @@ rectangle "ТЕКУЩАЯ СИТУАЦИЯ" as Current {
   
   rectangle "Проблемы" {
     rectangle "Неполная документация" as Problem1
-    rectangle "Нет реальных примеров" as Problem2
+    rectangle "Покрыты не все сценарии использования" as Problem2
     rectangle "Часы поиска решений" as Problem3
     rectangle "Зависимость от наличия\nканалов связи с командой Приложения" as Problem4
     rectangle "Долгое ожидание\nответа" as Problem5
@@ -63,20 +63,20 @@ rectangle "РАЗРАБАТЫВАЕМОЕ РЕШЕНИЕ" as Future {
   rectangle "Новая документационная платформа" {
     rectangle "Структурированная\nдокументация" as NewDocs
     rectangle "База классических примеров\n(от команды API)" as NewClassic
-    rectangle "База реальных примеров\n(от команды Панченко)" as NewReal
+    rectangle "База реальных примеров\n(от команды Приложения)" as NewReal
     rectangle "Нейроагент\n(мгновенные ответы)" as Neuro
   }
   
   rectangle "Преимущества" {
     rectangle "Полная и проверенная\nдокументация" as Benefit1
-    rectangle "Реальные примеры\nиз практики" as Benefit2
+    rectangle "Реальные примеры\nиз реализованных проектов" as Benefit2
     rectangle "Поиск за минуты\nвместо часов" as Benefit3
     rectangle "Мгновенные ответы\nбез ожидания" as Benefit4
     rectangle "Независимость\nот каналов связи" as Benefit5
   }
   
   rectangle "Результаты для бизнеса" {
-    rectangle "Низкий порог входа\nдля новичков" as Result1
+    rectangle "Сниженный порог входа\nдля новичков" as Result1
     rectangle "Ускорение разработки\n(часы → минуты)" as Result2
     rectangle "Разгрузка разработчиков API\n(меньше прямых вопросов)" as Result3
     rectangle "Разгрузка техподдержки\n(меньше обращений)" as Result4
