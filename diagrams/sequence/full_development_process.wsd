@@ -1,0 +1,108 @@
+@startuml seq_full_development_process
+title Анализ → Разработка → Внедрение → Продвижение → Поддержка
+
+' Увеличиваем расстояния
+skinparam componentPadding 80
+skinparam componentMargin 40
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+' === ВСЕ УЧАСТНИКИ (сгруппированы по ролям) ===
+
+' ЛЕВАЯ ГРУППА: Источники и валидаторы
+actor "Команда Панченко В.П." as Panchenko
+actor "Разработчики API\nАвторы справки" as APIDev
+
+' ЦЕНТРАЛЬНАЯ ГРУППА: Разработчики
+actor "Разработчики решения" as Team
+
+' ПРАВАЯ ГРУППА: Продвижение и решение
+actor "Владимир Липин\n(запросы + продвижение)" as Lipin
+actor "Антон Циварев\n(бизнес-запросы + маркетинг)" as Tsivarev
+actor "Сергей Евсиков\n(решения)" as Evsikov
+
+' УЧАСТНИКИ ПРОЦЕССА
+participant "База знаний\n+ требования" as Base
+participant "Новая документация\n+ нейроагент" as Project
+participant "Пользователи" as Users
+participant "Сообщество" as Community
+participant "Партнеры" as Partners
+
+' === ФАЗА 1-2: АНАЛИЗ И СБОР ===
+
+Team -> Lipin: Сбор запросов
+Lipin --> Team: Высокоуровневые проблемы
+
+Team -> Tsivarev: Сбор бизнес-потребностей
+Tsivarev --> Team: Тренды и сценарии
+
+Team -> Panchenko: Сбор реальных примеров
+Panchenko --> Team: Кейсы из практики
+
+Team -> APIDev: Сбор классических примеров
+APIDev --> Team: 30+ базовых примеров
+
+Team -> Base: Накопление материалов
+
+Team -> APIDev: На валидацию
+APIDev --> Team: Проверка
+
+Team -> Base: Валидированные данные
+
+' === ФАЗА 3: РАЗРАБОТКА ===
+
+Base -> Team: Готовая база
+Team -> Project: Разработка платформы
+
+loop Разработка
+  Project -> Panchenko: Уточнения
+  Project -> APIDev: Консультации
+  Project -> APIDev: Проверка
+  Team -> Project: Реализация
+end
+
+' === ФАЗА 4: ВНЕДРЕНИЕ ===
+
+Project -> Team: MVP готов
+Team -> Lipin: На тестирование
+Lipin -> Users: Привлечение
+Users -> Project: Тестирование
+Users --> Lipin: Обратная связь
+Lipin --> Team: Сводка
+
+' === ФАЗА 5: ДОРАБОТКА ===
+
+Team -> Project: Анализ и доработка
+Project -> APIDev: Проверка
+APIDev --> Project: Ок
+Team -> Project: Релиз
+
+' === ФАЗА 6: ПРОДВИЖЕНИЕ ===
+
+Project -> Tsivarev: Готово
+Tsivarev -> Tsivarev: Маркетинг
+Tsivarev -> Partners: Партнёрам
+Tsivarev -> Community: Статьи, посты
+
+Project -> Lipin: Готово
+Lipin -> Users: Рекомендации
+
+Users -> Project: Массовый приход
+Project --> Tsivarev: Метрики
+Project --> Lipin: Снижение нагрузки
+
+' === ФАЗА 7: ПОДДЕРЖКА ===
+
+loop Развитие
+  Lipin -> Team: Новые запросы
+  Tsivarev -> Team: Новые тренды
+  Panchenko -> Project: Новые примеры
+  APIDev -> Project: Обновления API
+  APIDev -> Project: Актуализация
+  Community -> Project: Обратная связь
+  
+  Team -> Project: Обновления
+  Project -> Users: Улучшенная версия
+end
+
+@enduml

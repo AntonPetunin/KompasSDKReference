@@ -1,0 +1,118 @@
+@startuml usecase_for_users_then
+left to right direction
+title Use Case: Пользователи API КОМПАС - ПОСЛЕ ВНЕДРЕНИЯ
+
+' Цветовая схема
+skinparam componentStyle uml2
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+' === КОЛОНКА 1: ПОЛЬЗОВАТЕЛИ ===
+rectangle " " {
+  actor "Внутренний разработчик\n(Команда Приложений Компаса)" as Internal
+  actor "Полувнешний разработчик\n(Партнёры, вендоры)" as SemiExternal
+  actor "Внешний разработчик\n(нет доступа к команде API)" as External
+}
+
+' === КОЛОНКА 2: НОВАЯ ПЛАТФОРМА ===
+rectangle "Новая документационная платформа" {
+  usecase "Структурированная\nдокументация" as N1
+  usecase "Нейроагент\n(мгновенные ответы)" as N3
+  usecase "Обилие разнообразных\nпримеров" as N4
+}
+
+' === КОЛОНКА 3: БАЗЫ ПРИМЕРОВ ===
+rectangle "Источники примеров" as ES {
+  usecase "Классические примеры\n(от разработчиков API)" as E1
+  usecase "Реальные примеры\n(от команды Панченко)" as E2
+  usecase "Примеры от нейроагента \n(через запросы)" as E3
+}
+
+' === КОЛОНКА 4: УРОВНИ ДОСТУПА ===
+rectangle "Уровни доступа" {
+  usecase "Полный доступ\nко всем примерам" as A1
+  usecase "Доступ ко всем примерам\n через нейроагент" as A2
+}
+
+' === КОЛОНКА 5: РЕЗУЛЬТАТЫ ===
+rectangle "Результаты и преимущества" {
+  usecase "Поиск за минуты" as R1
+  usecase "Понимание кода" as R2
+  usecase "Проверенные примеры" as R3
+  usecase "Нет нагрузки на\nразработчиков API" as R4
+  usecase "Проекты доводятся\nдо релиза" as R5
+  usecase "Формирование\nсообщества" as R6
+}
+
+' === СВЯЗИ ===
+
+' Внутренние
+Internal --> N1
+Internal --> N3
+Internal --> N4
+Internal --> E1
+Internal --> E2
+Internal --> E3
+Internal --> A1
+
+A1 --> R1
+A1 --> R2
+A1 --> R5
+
+' Полувнешние
+SemiExternal --> N1
+SemiExternal --> N3
+SemiExternal --> N4
+SemiExternal --> E1 
+SemiExternal --> E3
+SemiExternal --> A2
+
+A2 --> R1
+A2 --> R2
+A2 --> R5
+
+' Внешние
+External --> N1
+External --> N3
+External --> N4
+External --> E1
+External --> E3
+External --> A2
+
+' Общие результаты
+N3 --> R1 : ускоряет
+N3 --> R2 : объясняет
+N4 --> R1 : даёт готовое
+E1 --> R3
+E2 --> R3
+E3 --> R3
+R1 --> R5 : способствует
+R2 --> R5
+R3 --> R5
+R4 --> R5 : освобождает ресурсы
+R6 --> R5 : расширяет базу
+
+' Пояснения
+note bottom of Internal
+  ✅ Перестают быть "живой документацией",
+  могут сосредоточиться на разработке
+end note
+
+note bottom of SemiExternal
+  ✅ Независимость от связей 
+  с внутренними разработчиками
+  быстрый доступ к знаниям
+end note
+
+note top of External
+  ✅ Резкое снижение порога входа,
+  возможность завершать проекты
+end note
+
+note top of E2
+  Ключевой актив:
+  Все примеры послужат реальными
+  проверенными кейсами использования API
+end note
+
+@enduml

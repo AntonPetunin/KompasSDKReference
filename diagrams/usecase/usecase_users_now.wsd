@@ -1,0 +1,111 @@
+@startuml usecase_for_users_now
+left to right direction
+title Use Case: Пользователи API КОМПАС - ТЕКУЩАЯ СИТУАЦИЯ
+
+' Цветовая схема
+skinparam componentStyle uml2
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+' === КОЛОНКА 1: ПОЛЬЗОВАТЕЛИ ===
+rectangle " " {
+  actor "Внутренний разработчик\n(Команда Приложений Компаса\nпод рук. Панченко В.П.)" as Internal
+  actor "Полувнешний разработчик\n(Партнёры, вендоры)" as SemiExternal
+  actor "Внешний разработчик\n(нет доступа к команде API)" as External
+}
+
+' === КОЛОНКА 2: ИСТОЧНИКИ ===
+rectangle "Доступные источники" {
+  usecase "Официальная\nсправка SDK" as S1
+  usecase "Классические примеры\n(30 шт. от команды API)" as S2
+  usecase "Техподдержка" as S3
+  usecase "Знакомые\n(внутренние/полувнешние)" as S4
+  usecase "Прямые вопросы\nк разработчикам API" as S5
+}
+
+' === КОЛОНКА 3: ПРОБЛЕМЫ ===
+rectangle "Проблемы и потери времени" {
+  usecase "Часы на поиск\nв неполной справке" as P1
+  usecase "Реверсинг чужого кода" as P2
+  usecase "Гадание: почему\nне работает?" as P3
+  usecase "Ожидание ответа\nот техподдержки" as P4
+  usecase "Устаревшие/неверные\nпримеры" as P5
+  usecase "Брошенные проекты\nиз-за сложности" as P6
+}
+
+' === КОЛОНКА 4: ПОСЛЕДСТВИЯ ===
+rectangle "Последствия для бизнеса" {
+  usecase "Затянутые сроки\nразработки" as C1
+  usecase "Демотивация\nразработчиков" as C2
+  usecase "Отказ от\nвнедрения" as C3
+  usecase "Нагрузка на\nтехподдержку" as C4
+  usecase "Отвлечение\nразработчиков API" as C5
+}
+
+' === СВЯЗИ С ЧЁТКИМИ КОЛОНКАМИ ===
+
+' Внутренние
+Internal --> S1
+Internal --> S2
+Internal --> S3
+Internal --> S4
+Internal --> S5
+
+S1 --> P1 : приводит к
+S2 --> P5 : часто
+S3 --> P4 : вызывает
+S4 --> P2 : иногда
+S5 --> C5 : отвлекает
+
+' Полувнешние
+SemiExternal --> S1
+SemiExternal --> S2
+SemiExternal --> S3
+SemiExternal --> S4
+
+S1 --> P1
+S2 --> P5
+S3 --> P4
+S4 --> P2
+
+' Внешние
+External --> S1
+External --> S2
+External --> S3
+
+S1 --> P1
+S2 --> P5
+S3 --> P4
+P1 --> P6 : ведёт к
+P2 --> P3 : вызывает
+P3 --> P6
+P4 --> P1
+P5 --> P3
+
+' Общие последствия
+P1 --> C1
+P2 --> C1
+P3 --> C2
+P4 --> C4
+P5 --> C3
+P6 --> C3
+
+' Пояснения снизу
+note bottom of Internal
+  ⚠️ Есть прямой доступ к разработчикам,
+  но это создаёт нагрузку на них
+end note
+
+note bottom of SemiExternal
+  ⚠️ Информация приходит с задержкой
+  для полувнешних разработчиков
+end note
+
+note bottom of External
+  ⚠️ Самые уязвимые:
+  только справка + классические примеры
+  от разработчиков API КОМПАС
+  высокий риск бросить разработку
+end note
+
+@enduml

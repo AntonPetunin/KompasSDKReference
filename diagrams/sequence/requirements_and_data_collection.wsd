@@ -1,0 +1,80 @@
+@startuml seq_reqs_and_data_collection
+title Анализ требований, сбор примеров и валидация
+
+' Увеличиваем расстояния
+skinparam componentPadding 80
+skinparam componentMargin 40
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+
+actor "Разработчики\nрешения" as Team
+actor "Липин Владимир\n(запросы от внешних)" as Lipin
+actor "Циварев Антон\n(бизнес-потребности)" as Tsivarev
+actor "Команда Панченко В.П.\n(реальные примеры)" as Panchenko
+actor "Разработчики API\n(классические примеры)\nАвторы справки" as APIDev
+participant "База требований\nи примеров" as Base
+
+== СБОР ВЫСОКОУРОВНЕВЫХ ЗАПРОСОВ == 
+
+Team -> Lipin: Какие вопросы чаще всего\nзадают внешние?
+Lipin --> Team: "Как сделатьы...?"
+Team -> Lipin: Какие проблемы\nу новичков?
+Lipin --> Team: "С чего начать?"
+Team -> Lipin: Что чаще всего\nне работает?
+Lipin --> Team: Типовые ошибки
+
+Team -> Tsivarev: Какие запросы\nот партнёров?
+Tsivarev --> Team: Бизнес-сценарии
+Team -> Tsivarev: Что нужно\nдля продвижения?
+Tsivarev --> Team: Ключевые боли\nпользователей
+
+== СБОР РЕАЛЬНЫХ ПРИМЕРОВ ==
+
+note right of Base 
+- сложные сценарии
+- общие решения
+- обходные пути
+- обработка ошибок
+end note
+
+Team -> Panchenko: Поделитесь реальными\nпримерами пользования \n[Бибилиотеки]
+Panchenko --> Team: Передача примеров
+
+Team -> APIDev: Есть ли новые\nклассические примеры?
+APIDev --> Team: Базовые примеры KsAPI
+
+== ВАЛИДАЦИЯ == 
+
+note right of Base
+- что используется
+- что устарело/не используется
+- что требует доработки
+end note
+
+Team -> APIDev: Собранные материалы\nна проверку
+APIDev --> Team: Валидация
+
+Team -> Team: Корректировка
+Team -> APIDev: Исправленный вариант
+APIDev --> Team: Подтверждение
+
+== ФОРМИРОВАНИЕ БАЗЫ ==
+
+note right of Base
+Структурирование
+- запросы → требования
+- примеры → база знаний
+- валидировано авторами
+end note
+
+Team -> Base: Структурирование полученных данных
+
+note right of Base
+  Итог фазы 1-2:
+  - чёткие требования
+  - валидные примеры
+  - готовая основа
+  для разработки
+end note
+
+@enduml
